@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var set = new Set([1])
+			var iteror = set.entries()
+			info = iteror.next()
+			while (!info.done){
+				console.log(iteror)
+				info = iteror.next()
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 语法符合与java
+			类体{
+				只能有方法成员
+				static 静态关键词
+				super() 调用父级
+				extends 继承
+			}
+			目前， 只有这种写法可行， 因为 ES6 明确规定， Class 内部只有静态方法， 没有静态属性。
+			// 以下两种写法都无效
+			class Foo {
+			  // 写法一
+			  prop: 2
+			    // 写法二
+			  static prop: 2
+			}
+			Foo.prop // undefined
+			ES7 有一个静态属性的提案， 目前 Babel 转码器支持。
+			
+			这个提案对实例属性和静态属性， 都规定了新的写法。
+			*/
+			class A {
+				// construct method
+				constructor() {
+					// super()
+					this.a = 1
+				}
+				hello() {
+					alert('Hello, ' + this.name + '!');
+				}
+			}
+			console.dir(A.c)
+		</script>
+	</body>
+</html>
