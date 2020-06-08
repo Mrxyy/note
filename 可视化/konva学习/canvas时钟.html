@@ -60,16 +60,17 @@
 			  ctx.fillRect(0,0,2,-200);
 			  ctx.fill();
 			  ctx.restore()
-			  ctx.save()
+			  //之前保存的sava状态被弹出
+			  // ctx.save()
 			  
 			  ctx.fillStyle = "yellow"
 			  ctx.rotate(M*Math.PI/180)
 			  ctx.fillRect(0,0,2,-150);
 			  ctx.fill();
 			  
-			  ctx.restore()
+			  ctx.restore() // 没有恢复到第一个 因为sava 已经被取出
 			  ctx.save()
-			  ctx.fillStyle = "green"
+			  // ctx.fillStyle = "green"
 			  ctx.rotate(H*Math.PI/180)
 			  ctx.fillRect(0,0,2,-100);
 			  ctx.fill();
