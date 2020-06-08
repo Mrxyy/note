@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.s1{
+				width: 500px;
+				height: 500px;
+				background: red;
+			}
+	</head>
+		</style>
+	<body>
+		<div class="s1"id="s1"></div>
+		<script type="text/javascript">
+			console.log(s1.animate)
+			var myAnimation = s1.animate([
+				{ opacity: 0,transform: "translateX(0)"},
+				{ opacity: 1, offset: 0.4 },
+				{ opacity: 0,transform: "translateX(500px)"}
+			],{
+				duration:30000,
+			})
+				console.log(myAnimation.effect,myAnimation.currentTime)
+			console.log(myAnimation)
+			setTimeout(function(){
+				myAnimation.pause()
+				myAnimation.finish()
+				// alert(myAnimation.id)
+			},3000)
+			myAnimation.onfinish= function (){
+				alert(1)
+				myAnimation.play()
+			}
+		</script>
+	</body>
+</html>

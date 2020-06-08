@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jsfeat.js"></script>
+	</head>
+	<body>
+		<img src="../封片/ks.jpg" id="img">
+		<p><label for="fileImg">更换图片</label><input type="file" id="fileImg" accept="image/*" style="display:none;"></p> 
+		<canvas id="cav"></canvas>
+		<script>
+			var fnCannyEdge = function (source, canvas, options) {
+			    options = options || {};
+			    // 可选参数
+			    var blur_radius = options.blur_radius || 2;
+			    var low_threshold = options.low_threshold || 20;
+			    var high_threshold = options.high_threshold || 50;
+			    // 资源的尺寸
+			    // 图片原始尺寸
+			    var originWidth = source.naturalWidth || source.width;
+			    var originHeight = source.naturalHeight || source.height;
+			    // 最大尺寸限制
+			    var maxWidth = 512, maxHeight = 512;
+			    // 目标尺寸
+			    var width = originWidth, height = originHeight;
+			    // 图片尺寸超过400x400的限制
+			    if (originWidth > maxWidth || originHeight > maxHeight) {
+			        if (originWidth / originHeight > maxWidth / maxHeight) {
+			            // 更宽，按照宽度限定尺寸
+			            width = maxWidth;
+			            height = Math.round(maxWidth * (originHeight / originWidth));
+			        } else {
+			            height = maxHeight;
+			            width = Math.round(maxHeight * (originWidth / originHeight));
+			        }
+			    }
+			    var context = canvas.getContext('2d');
+			    // canvas视觉展示
+			    canvas.width = source.width = width;
+			    canvas.height = source.height = height;
+			    // 清除内容
+			    context.clearRect(0, 0, width, height);
+			    // 或许图片信息
+			    context.drawImage(source, 0, 0, width, height);
+			    var imageData = context.getImageData(0, 0, width, height);
+			    // 图像边缘查找处理
+			    // 原理为：
+			    // 1. 灰度
+			    // 2. 高斯模糊
+			    // 3. canny边缘检测
+			    var img_u8 = new jsfeat.matrix_t(width, height, jsfeat.U8C1_t);
+			    jsfeat.imgproc.grayscale(imageData.data, width, height, img_u8);
+			    var kernelSize = (blur_radius + 1) * 2;
+			    jsfeat.imgproc.gaussian_blur(img_u8, img_u8, kernelSize, 0);
+			    jsfeat.imgproc.canny(img_u8, img_u8, low_threshold, high_threshold);
+			
+			    // 渲染结果重新绘制到canvas
+			    var data_u32 = new Uint32Array(imageData.data.buffer);
+			    var alpha = (0xff << 24);
+			    var i = img_u8.cols * img_u8.rows, pix = 0;
+			    while(--i >= 0) {
+			        pix = 255 - img_u8.data[i];
+			        data_u32[i] = alpha | (pix << 16) | (pix << 8) | pix;
+			    }
+			    context.putImageData(imageData, 0, 0);
+			};
+			img.onload = function(){
+				fnCannyEdge(img,cav)
+			}
+			// 选择本地图片的处理
+			var reader = new FileReader();
+			// 文件base64化，以便获知图片原始尺寸
+			reader.onload = function(event) {
+			    img.src = event.target.result;
+			};
+			// 选择的文件对象
+			var file = null;
+			document.getElementById('fileImg').addEventListener('change', function (event) {
+			    file = event.target.files[0];
+			    // 选择的文件是图片
+			    if (file.type.indexOf("image") == 0) {
+			        reader.readAsDataURL(file);    
+			    }
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			1.prop 默认值是单向的只能由父作用域修改<br>	
+			2.props默认值为对象的时候，需要函数<br>	
+			3.props为函数是this不会发生变化<br>
+			4.非props节点会作为属性加到组件内部根节点上，style和class是一种结合的方式<br>
+			5.使用$attr可以访问所有的property，组件类可以任意访问  v-bind="$attrs"<br>
+			6.事件在非事件指令会被触发
+			<div :style="'color:'+a('red')" @click="b()()">{{a(1)}}</div>
+			<yang-tem   required placeholder="Enter your username" data-type = "yang" id="1"></yang-tem>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script id="yang-tem" type="text/template">
+			<div>
+				<span v-bind="$attrs">$attrs{{$attrs}}</span>
+			</div>
+		</script>
+		<script type="text/javascript">
+			new Vue({
+				el:"#app",
+				data:{
+					el:'#app',
+				},
+				methods:{
+					a:function(a){
+						return a
+					},
+					b:function(){
+						alert(2)
+						return function(){
+							alert(1)
+						}
+					}
+				},
+				components:{
+					"yang-tem":{
+						// inheritAttrs:false,
+						template:"#yang-tem",
+						mounted:function(){
+							console.log(this)
+						},
+						methods:{
+							a:function(a){
+								return a
+							}
+						}
+					}
+				}
+			})
+			//参数
+			let  A = {
+				a:function(){console.log(this)}
+			}
+			// // 实例
+			let B = {
+				
+				b:"我是b"
+			}
+			B.a = A.a.bind(B)
+			// 传值后
+			let C = {
+				c:"C"
+			}
+			C.a = B.a
+			B.a()
+			C.a()
+			
+			// 实例
+			// function B(A){
+			// 	this.a = A.a.bind(this)
+			// }
+			// let b = new B(A)
+			// b.a()
+			// let C = {
+			// 	c:"C"
+			// }
+			// C.a = b.a
+			// C.a()
+		</script>
+	</body>
+</html>

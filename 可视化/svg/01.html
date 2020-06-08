@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/2000/svg">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- ⚪ -->
+		<!-- 原生 -->
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<circle cx="100" cy="100" r="40" stroke="red" strokewidth="2" fill="yellow"></circle>
+		</svg>
+		<!-- Snap -->
+		<svg id="s"></svg>
+		<svg id="s1"></svg>
+		<!-- 椭圆 -->
+		<svg xmlns version="1.1" width="500" height="1000">
+			<ellipse cx="200" cy="500" rx="100" ry="200" fill="bule"></ellipse>
+		</svg>
+		<!-- 线 -->
+		<svg>
+			<line id="line"  y1="0" x1="10" x2="100" y2="200" stroke-width="10" stroke="red"></line>
+		</svg>
+		
+		<script src="snap.svg-min.js"></script>
+		<script src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			var s1 = Snap("#s")
+			console.log(s1.paper)
+			s1.paper.circle(100,100,50)
+			var s2 = Snap("#s1")
+			//填写属性
+			s2.paper.el("circle",{
+				cy:100,
+				cx:100,
+				r:50,
+				fill:"red"
+			})
+			$(line).click(function(){
+				$(this).attr("stroke","yellow")
+				console.log($(this).attr("stroke"))
+			})
+			console.log($(line).prop("x2"),$(line).attr("x2"))
+		</script>
+	</body>
+</html>

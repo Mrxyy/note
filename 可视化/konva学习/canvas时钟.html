@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#can{
+				background: #000;
+				margin:50px auto;
+				display: block;
+				border-radius: 50%;
+				box-shadow:0 0 5px 5px darkred;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="can" width="500" height="500"></canvas>
+		<script>
+			var c=document.getElementById("can");
+			var ctx=c.getContext("2d");
+			function clock(H,M,S){
+				// 1.清空及基本环境
+				clear()
+				// 改变原点
+				ctx.translate(250,250)
+				ctx.beginPath();
+				// 圆框
+				ctx.strokeStyle = "red"
+				ctx.arc(0,0,240,0,2*Math.PI);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.beginPath();
+				// 保存路径
+				ctx.save()
+				ctx.fillStyle = "#fff"
+				// 2.刻度尺
+				for (var i = 0 ;i < 60;i++) {
+					ctx.rotate(6*Math.PI/180)
+					ctx.fillRect(0,-237,2,3);
+					ctx.fill();
+				}
+				// 需要分钟
+				// for (var i = 0 ;i < 24;i++) {
+				// 	ctx.rotate(15*Math.PI/180)
+				// 	ctx.fillRect(0,-237,2,8);
+				// 	ctx.fill();
+				// }
+				for (var i = 0 ;i < 12;i++) {
+					ctx.rotate(30*Math.PI/180)
+					ctx.fillRect(0,-235,2,10);
+					ctx.fill();
+				}
+				// ctx.restore()
+				draw(H,M,S)
+			}
+			// 时钟走动
+			function draw(H,M,S){
+			  ctx.fillStyle = "red"
+			  ctx.rotate(S*Math.PI/180)
+			  ctx.fillRect(0,0,2,-200);
+			  ctx.fill();
+			  ctx.restore()
+			  ctx.save()
+			  
+			  ctx.fillStyle = "yellow"
+			  ctx.rotate(M*Math.PI/180)
+			  ctx.fillRect(0,0,2,-150);
+			  ctx.fill();
+			  
+			  ctx.restore()
+			  ctx.save()
+			  ctx.fillStyle = "green"
+			  ctx.rotate(H*Math.PI/180)
+			  ctx.fillRect(0,0,2,-100);
+			  ctx.fill();
+			  ctx.restore()
+			  ctx.save()
+			  ctx.translate(-250,-250)
+			}	
+			
+			// 清空
+			function clear(){
+				ctx.fillStyle = "#000000"
+				ctx.fillRect(0,0,500,500);
+				ctx.fill();
+			}
+			setInterval(function(){
+				// 时间转换刻度
+				var time=new Date();//每隔100ms 查询一次此处时间 要写定时器里面
+				var hour=time.getHours()%12*30+time.getMinutes()/60*30;
+				var min=time.getMinutes()*6+time.getSeconds()/60*6;
+				var sed=time.getSeconds()*6+time.getMilliseconds()/1000*6;
+				console.log(hour,min,sed)
+				clock(hour,min,sed)
+			},1000)
+		</script>
+	</body>
+</html>

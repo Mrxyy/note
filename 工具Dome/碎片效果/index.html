@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.min.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			html{
+				font-size:50px;
+			}
+			div.Box{
+				position: relative;
+				width: 5.5rem;
+				height: 5.5rem;
+				margin: auto;
+				margin-top: 130px;
+			}
+			div.Box>div {
+				/* width: 50%;
+				height: 50%; */
+				float: left;
+				overflow: hidden;
+				animation-name: donghua;
+				animation-timing-function: ease;
+			}
+			@keyframes donghua{
+				from{
+					opacity: 0;
+					/* transform: translate(-50px); */
+				}
+				50%{
+					opacity: 0.8;
+				}
+				to{
+					opacity: 1;
+					/* transform: translate(0px); */
+				}
+			}
+			div.Box>div img {
+				width: 5.5rem;
+				height: 5.5rem;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="Box" id="Box">
+			<div>
+				<img src="ks.jpg">
+			</div>
+		</div>
+		<script src="jquery-1.9.1.min.js">
+		</script>
+		<script>
+			//x,y => 列 行
+			init(18,15)
+			function init (x,y){
+				var num =x*y
+				var span = $("#Box").html()
+				console.log(span,num)
+				for(var i = 0 ; i < num ; i++){
+					$("#Box").append(span)
+					$("#Box").children().eq(i).css({
+						"animationDelay":2*Math.random()+"s",
+						"animationDuration":5*Math.random()+1+"s"
+					})
+				}
+				$("div.Box>div").css(
+					{
+					width:100/x + '%',
+					height:100/y + '%'				
+					}
+				)
+				$("img").each(function(e,v){
+					console.log($(v).position(),v.offsetParent)
+					$(v).css({
+						left:-$(v).position().left,
+						top:-$(v).position().top
+					})
+				})
+			}
+		</script>
+	</body>
+</html>

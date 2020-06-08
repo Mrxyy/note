@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="img1.jpg" alt="" style="margin-top:1000px;">
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="html2canvas.js"></script>
+    <script>
+        // 标记为true 时候 才能触发截图
+        $("body").append($("<div style='width:0px;height:0px;position:fixed;top:0;bottom:0;box-sizing: border-box;border:0px solid rgba(200,200,200,.5);background-clip: padding-box;' id='jtB'><div id='tu' style='width:100%;height:100%;background:transparent;'><div><div>"))
+        //标记是否截图中
+        var flag = false
+        //是否按中Alt键
+        var num
+        // 截图时矩形
+        var rect = {
+            w: 0,
+            h: 0,
+            x: 0,
+            y: 0
+        }
+        //起始位置对象
+        var start = {
+            x: 0,
+            y: 0
+        }
+        
+        $(document).keydown(function (e) {
+            num = e.keyCode
+            // console.log(e.keyCode)
+        })
+        $(document).keyup(function (e) {
+            num = undefined
+            // console.log(e)
+            // alert(1)
+        })
+        $(document).mouseup(function () {
+            flag = false
+            $("#jtB").css({
+                visibility: "hidden"
+            })
+            console.log(html2canvas)
+            takeScreenshot()
+        })
+        $(document).mousedown(function (e) {
+            if (num == 17) {
+                flag = true
+            }
+            if (flag) {
+                start = Screenshot(e)
+                console.log(start)
+            }
+        })
+        $(document).mousemove(function (e) {
+            if (flag && num == 17) {
+                // Screenshot(e)
+                rect.w = Math.abs(Screenshot(e).x - start.x)
+                // console.log(Screenshot(e).y - start .y)
+                rect.h = Math.abs(Screenshot(e).y - start.y)
+                if (Screenshot(e).x - start.x < 0) {
+                    rect.x = Screenshot(e).x
+                } else {
+                    rect.x = start.x
+                }
+
+                if (Screenshot(e).y - start.y < 0) {
+                    rect.y = Screenshot(e).y
+                } else {
+                    rect.y = start.y
+                }
+                // 即将要留的空白位置
+                $('#jtB').css({
+                    "borderWidth": 0,
+                    width: rect.w,
+                    height: rect.h,
+                    top: rect.y,
+                    left: rect.x,
+                })
+                // 怪异盒子模型 + border 生成一个蒙版空白效果
+                var bor = $('#jtB').get(0).getBoundingClientRect()
+                var winW = $(window).width() 
+                var winH = $(window).height()
+                $('#jtB').css({
+                    "borderTopWidth": bor.y,
+                    "borderRightWidth":winW - (bor.x + rect.w),
+                    "borderBottomWidth": winH - (bor.y + rect.h),
+                    "borderLeftWidth": bor.x,
+                    "boxSizing": "border-box",
+                    "width": winW,
+                    "height": winH,
+                    top: 0,
+                    left: 0
+                })
+                $("#jtB").css({
+                visibility: "visible"
+            })
+                // console.log(rect,bor,$(window).width)
+            }
+
+        })
+
+        // 返回位置信息
+        function Screenshot(e) {
+            var e = e || window.event
+            // console.log(e)
+            var offset = {}
+            offset.x = e.clientX
+            offset.y = e.clientY
+            return offset
+        }
+
+        // 生成截图
+        function takeScreenshot() {
+            html2canvas(document.body,{
+                width: $("#tu").outerWidth(),
+                height:$('#tu').outerHeight(),
+                x:$('#tu').offset().left,
+                y:$('#tu').offset().top
+            }).then(function (canvas) {
+                document.body.appendChild(canvas);
+            });
+        }
+    </script>
+</body>
+</html>

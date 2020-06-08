@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"  @my-cli2="al">
+			<p>自定义事件</p>
+			<p>1.事件名会忽略大小写（html中忽略大小写）</p>
+			<button @click="i++">{{button}}{{i}}</button>
+			<button @click="$emit('my-cli2')">触发全局的某个事件</button>
+			<yang-tem @my-cli="al" :fx="al"></yang-tem>
+		</div>
+		<script id="yang-tem" type="text/template">
+			<div>
+				触发事件<br>
+				<p>vm.$emit触发当前实例上的事件。附加参数都会传给监听器回调。</p>
+				<button type="button" @click="$emit('my-cli');fx();fx1()">子</button>
+			</div>
+		</script>
+		<script src="js/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					button:"点击",
+					i:0
+				},
+				methods:{
+					al:function(a){
+						console.log(this,a)
+					},
+					// function(){
+					// 	alert(1)
+					// 	this.$on("met-test",function(){alert(2)})
+					// }
+				},
+				components: {
+					"yang-tem":{
+						template:"#yang-tem",
+						props: {
+							fx: {
+								type: Function,
+								required:true
+							},
+						},
+						methods: {
+							fx1:function() {
+								console.log(this.$parent.al.call(this,1),this)
+							}
+						},
+					},
+				},
+			})
+		</script>
+	</body>
+</html>

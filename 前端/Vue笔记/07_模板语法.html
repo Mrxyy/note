@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		插值<br>
+		文本<br>
+		原始 HTML v-html<br>
+		Attribute<br>
+		使用 JavaScript 表达式<br>
+		指令<br>
+		参数<br>
+		<mark>动态参数 指令+【field】<br></mark>
+		<p>对动态参数的值的约束
+动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。<br>
+
+对动态参数表达式的约束<br>
+动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的。例如：<br>
+
+<!-- 这会触发一个编译警告 -->
+<mark>
+	<a v-bind:['foo' + bar]="value"> ... </a><br>
+	变通的办法是使用没有空格或引号的表达式，或用计算属性替代这种复杂表达式。<br>
+</mark>
+
+
+在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写：<br>
+
+在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。<br>
+除非在实例中有一个名为“someattr”的 property，否则代码不会工作。<br>
+<a v-bind:[someAttr]="value"> ... </a></p>
+		修饰符<br>
+		缩写<br>
+		v-bind 缩写<br>
+		v-on 缩写
+		<script src="js/vue.js"></script>
+		<script>
+			
+		</script>
+	</body>
+</html>

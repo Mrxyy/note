@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#a{
+				position: relative;
+				width:500px ;
+				height: 500px;
+				border: 2px solid red;
+				border-radius:50% ;
+				margin: 50px auto;
+			}
+			#d,#b,#c{
+				margin-top: 20px;
+				position: absolute;
+				left:250px;
+				width:0px ;
+				height: 0px;
+				border: 10px solid transparent;
+				border-bottom: 230px solid black;
+				border-top:none ;
+				transform-origin:50% 100%;
+				border-radius:0 0 10px 10px;
+			}
+			#b{
+				margin-top:70px;
+				border-bottom: 180px solid yellow;
+			}
+			#c{
+				margin-top: 150px;
+				border-bottom: 100px solid red;
+				
+			}
+		</style>
+	</head>
+	<body  onload="setInterval(()=>document.body.innerHTML=new Date().toLocaleString().slice(10,19))">
+		<div id="a">
+			<!--c时b分d秒-->
+		<div id="b"></div>
+		<div id="c"></div>
+		<div  id="d"></div>
+		</div>
+		<script type="text/javascript">
+		window.onload=function(){
+             setInterval( function(){
+             	var time=new Date();//每隔100ms 查询一次此处时间 要写定时器里面
+             	var hour=time.getHours()%12*30+time.getMinutes()/60*30;
+                var min=time.getMinutes()*6+time.getSeconds()/60*6;
+                 var sed=time.getSeconds()*6+time.getMilliseconds()/1000*6;
+//               找到现在的时分秒针转的度数
+             	$("c").style.transform="rotate("+hour+"deg)";
+             	$("b").style.transform="rotate("+min+"deg)";
+             	$("d").style.transform="rotate("+sed+"deg)";
+             },1000)
+             
+		}
+//		定义一个找元素的函数
+		  function $(id){
+		  	return typeof id=="string" ?document.getElementById(id):null;
+		  }
+		</script>
+	</body>
+</html>

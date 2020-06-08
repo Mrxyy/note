@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>0.默认作用域是给值得作用域</p>	
+			<cha-cao>熊洋洋-{{name}}</cha-cao>
+			<cha-cao min-name="记住在html标签里不要出现大写字母"></cha-cao>
+			<p>1.插槽中使用组件作用域slot-scope</p>
+			<p>2.组件只提供一个slot的时候，slot-scope不需要的制定名字，但是和有名插槽一起的时候一定不能省略</p>
+			<p>3.v-solt简写为#【slotName】，【slotName】全部都不能省略 </p>
+			<hava-scope #scope="scopeSlot">{{scopeSlot.user}}</hava-scope>
+		</div>
+		<script id="chacao" type="text/template">
+			<div>
+				<slot>{{name}}{{minName}}</slot>
+			</div>
+		</script>
+		
+		<script id="havascope" type="text/template">
+			<div>
+				<slot name="scope" :user="user"></slot>
+			</div>
+		</script>
+		<script src="js/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					name:"熊"
+				},
+				components: {
+					"cha-cao":{
+						template:"#chacao",
+						data:function(){
+							return{
+								name:"yangX"
+							}
+						},
+						props: {
+							minName: {
+								type:String
+								// required:true,
+								// default: "xiong",
+								
+							}
+						}
+					},
+					"hava-scope":{
+						template:"#havascope",
+						data() {
+							return {
+								user:"123"
+							}
+						}
+					}
+				},
+				
+			})
+		</script>
+	</body>
+</html>

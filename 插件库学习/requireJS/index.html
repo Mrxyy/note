@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>requireJS Hello!</h1>
+		<!-- <script type="text/javascript" src="./require.js" data-main="main.js"></script> -->
+		<script type="text/javascript">
+			// 实现 amd|模块记加载
+				// window.context = {}
+				// function requier(a,fx){
+				// 	var sc = document.createElement("script")
+				// 	sc.src = "js/"+a+'.js'
+				// 	// sc.async = true
+				// 	document.body.appendChild(sc)
+				// 	Object.defineProperty(context,a,{
+				// 		set:function(nv){
+				// 			fx(nv)
+				// 		}
+				// 	})
+				// }
+				// function define(a,b,fx){
+				// 	var awaitObj = []
+				// 	if(b.length){
+				// 		for(var i in b){
+				// 			console.log(b[i])
+				// 			requier(b[i],function(nv){
+				// 				awaitObj.push(nv)
+				// 				console.log(awaitObj)
+				// 				if (awaitObj.length == fx.length){
+				// 					context[a] = fx()
+				// 				}
+				// 			})
+				// 		}
+				// 	}else{
+				// 		context[a] = fx()
+				// 	}
+				// }
+				// requier("module1",function(){
+				// 	console.log("主模块")
+				// })
+				
+			// 实现 amd|模块记加载
+			
+				window.loaded = {}
+				window.awaiting = {}
+				
+				function requier(a,fx){
+					for(var i in a){
+						awaiting[a[i]]  = {}
+						var sc = document.createElement("script")
+						sc.id = a[i]
+						sc.src = "js/"+a[i]+'.js'
+						// sc.async = true
+						document.body.appendChild(sc)
+						// 定义一个所属参数
+						awaiting[a[i]].parame = []
+						awaiting[a[i]].fx = function(){
+							console.log(fx.length,awaiting[a[i]]["parame"].length)
+							if(fx.length <= awaiting[a[i]]["parame"].length){
+								console.log(fx)
+								fx.call(null,...awaiting[a[i]]["parame"] )
+							}
+						}
+					}
+				}
+				
+				function define(a,b,fx){
+					var awaitObj = []
+					if(b.length){
+						requier(b,fx)
+						// for(var i in b){
+						// 	// console.log(b[i])
+						// 	requier(b[i],function(nv){
+						// 		awaitObj.push(nv)
+						// 		console.log(awaitObj)
+						// 		if (awaitObj.length == fx.length){
+						// 			context[a] = fx()
+						// 		}
+						// 	})
+						// }
+					}else{
+						var result = fx()
+						// 挂载的是库
+						loaded[a] = result
+						// awaiting挂在的是依赖的回调
+						awaiting[a]["parame"].push(result)
+						console.log(awaiting[a].fx,awaiting[a]["parame"],awaiting)
+						// console.log(awaiting[a].fx())
+						awaiting[a].fx(result)
+						delete awaiting[a]
+						// document.getElementById(a).onLoad()
+					}
+				}
+				function addmod(){
+					
+				}
+				requier(["module1"],function(){
+					console.log("主模块")
+				})
+				
+				// window.loaded = {}
+				
+				// requier("a")
+				// context.a = 1
+				// var sc = document.createElement("script")
+				// sc.src = 'js/module1.js'
+				// sc.async = true
+				// document.body.appendChild(sc)
+				
+				// // setTimeout(function(){
+				// // 	document.body.appendChild(sc)
+				// // },3000)
+				// sc.onload = function(){
+				// 	sc.onload = function(){
+				// 		console.log("模块1加载好啦")
+				// 	}
+				// }
+		</script>
+		<!-- <script defer="defer" src="./js/async.js" type="text/javascript"> -->
+		</script>
+		<script type="text/javascript">
+			// console.log("down")
+		</script>
+	</body>
+</html>

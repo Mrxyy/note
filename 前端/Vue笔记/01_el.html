@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>注意：当实例没有rander和template的时候app将outerhtml作为模板</p>
+			<p>{{title}}</p>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			// el vue 实例挂载的Dom元素
+			new Vue({
+				el:"#app",
+				data:{
+					title:"el"
+				}
+			})
+		</script>
+	</body>
+</html>

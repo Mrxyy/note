@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src="js/enum.js"></script>
+		<script src="js/01.js"></script>
+	</body>
+	<script>
+		class A1{
+			a = 1
+			constructor(){
+				this.c = 2
+			}
+		}
+		class B1 extends A1{
+			// 自己重写构造方法必须重新
+			// constructor() {
+			    
+			// }
+		}
+		 var o = new B1()
+		 console.log(o)
+	</script>
+</html>
