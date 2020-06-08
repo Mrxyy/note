@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<!-- https://github.com/onlyhom/mobileSelect.js/blob/master/docs/README-CN.md -->
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="asset/mobile-select.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="trigger1"></div>
+		<div id="trigger2">地区选择</div>
+		<script src="./asset/mobile-select.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var mobileSelect2 = new MobileSelect({
+				trigger: '#trigger2',
+				title: '地区选择',
+				///
+				// wheels: [{
+				// 		data: [{
+				// 				id: '1',
+				// 				value: '附近'
+				// 			},
+				// 			{
+				// 				id: '2',
+				// 				value: '上城区'
+				// 			},
+				// 			{
+				// 				id: '3',
+				// 				value: '下城区'
+				// 			},
+				// 			{
+				// 				id: '4',
+				// 				value: '江干区'
+				// 			},
+				// 			{
+				// 				id: '5',
+				// 				value: '拱墅区'
+				// 			},
+				// 			{
+				// 				id: '6',
+				// 				value: '西湖区'
+				// 			}
+				// 		]
+				// 	},
+				// 	{
+				// 		data: [{
+				// 				id: '1',
+				// 				value: '1000米'
+				// 			},
+				// 			{
+				// 				id: '2',
+				// 				value: '2000米'
+				// 			},
+				// 			{
+				// 				id: '3',
+				// 				value: '3000米'
+				// 			},
+				// 			{
+				// 				id: '4',
+				// 				value: '5000米'
+				// 			},
+				// 			{
+				// 				id: '5',
+				// 				value: '10000米'
+				// 			}
+				// 		]
+				// 	}
+				// ],
+				wheels: [{
+					data: [{
+							id: '1',
+							title: 'A',
+							children: [{
+									id: 'A1',
+									title: 'A-a'
+								},
+								{
+									id: 'A2',
+									title: 'A-b'
+								},
+								{
+									id: 'A3',
+									title: 'A-c'
+								}
+							]
+						},
+						// 与我们··
+						{
+							id: '1',
+							title: 'B',
+							children: [{
+									id: 'B1',
+									title: 'B-a'
+								},
+								{
+									id: 'B2',
+									title: 'B-b'
+								},
+								{
+									id: 'B3',
+									title: 'B-c'
+								}
+							]
+						},
+					]
+				}],
+				keyMap: {
+					id: 'id',
+					value: 'title',
+					childs: 'children'
+				},
+				callback: function(indexArr, data) {
+					console.log(data); //返回选中的json数据
+				}
+			});
+			console.log(mobileSelect2)
+		</script>
+	</body>
+</html>

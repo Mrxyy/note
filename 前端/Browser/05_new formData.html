@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <form id="userForm">
+			<p>姓名：<input type="text" name="userNamee" value="李白"></p>
+			<p>性别：<input type="radio" name="sex" value="male" checked>男
+				<input type="radio" name="sex" value="female">女
+			</p>
+			<p>城市：<select name="city">
+					<option value="1">北京</option>
+					<option value="2">上海</option>
+					<option value="3">广州</option>
+					<option value="4">深圳</option>
+				</select></p>
+			<p><input type="button" id="btn" value="添加"></p>
+		</form> -->
+		<form id="userForm" method="" action="#" enctype="multipart/form-data">
+        <p>姓名：<input type="text" name="userNamee" value="李白"></p>
+        <p>性别：<input type="radio" name="sex" value="male" checked>男
+            <input type="radio" name="sex" value="female">女
+        </p>
+        <p>城市：<select name="city">
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">广州</option>
+                <option value="4">深圳</option>
+            </select></p>
+        <p>
+            头像:<input type="file" name="headImg"></p>
+        </p>
+        <p><input type="submit" id="btn" value="添加"></p>
+    </form>
+		<script>
+			let btn = document.getElementById("btn");
+        btn.onclick = function () {
+            // 根据ID获得页面中的form表单元素
+            var form = document.querySelector("#userForm");
+            // 将获得的表单元素作为参数,对formData进行初始化
+            var formData = new FormData(form);
+            formData.append("name", "Lori");
+            formData.append("name", "Jack");
+            formData.append("gender", "Jacie");
+            // 通过get方法只能读取第一个key为name的值
+            console.log(formData.get("name")); // Lori
+            // 通过getAll方法能获取到所有key为name的值
+            console.log(formData.getAll("name")); //["Lori","Jack"]
+            // 通过set修改数据,如果存在多个的话,就会改到只剩下一个key为name的值
+            formData.set('name', "李白"); // ["李白"]
+            // 如果不存在的话,就会添加一条数据
+            formData.set('age', 30);
+            console.log(formData.getAll('name'));
+            console.log(formData.getAll('age'));
+            // 通过delete方法删除key为gender的数据
+            formData.delete("gender");
+            console.log(formData.get('gender')); // null
+
+            for (let keys of formData.keys()) {
+                console.log(keys); // userName  sex city name age
+            }
+
+            for (let keys of formData.entries()) {
+                console.log(keys); // ["userNamee", "李白"] ["sex", "male"] ["city", "1"] ["name", "李白"] ["age", "30"]
+            }
+
+            for (let keys of formData.values()) {
+                console.log(keys);
+            }
+        }
+        btn.onclick = function () {
+            
+            var formdata=new FormData(document.getElementById("userForm"));
+			// for (let keys of formdata.entries()) {
+			//                 console.log(keys); // userName  sex city name age
+			//             }
+			var img =  document.createElement('img')
+			// bold文件 formdata.get('headImg')
+				img.src = URL.createObjectURL(formdata.get('headImg'))
+				// console.log(img)
+				document.body.append(img)
+			 // console.log(URL.createObjectURL(formdata.get('headImg')))		
+			 return false
+        }
+		</script>
+	</body>
+</html>

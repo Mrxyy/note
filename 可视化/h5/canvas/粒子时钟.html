@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#cav{
+				background: #000;
+				display: block;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cav" width="500" height="500"></canvas>
+		<script src="js/digit.js"></script>
+		<script>
+			txt= cav.getContext("2d")
+			renderNum(5,5)
+			// 画一个粒子数字
+			// 宽高 10:7
+			function renderNum(num,r) {
+				for(i in digit[num]){
+					// i 行数
+					console.log(i)
+					for(t in digit[num][i]){
+						// t 为列
+						console.log(digit[num][i][t])
+							if(digit[num][i][t]){
+								txt.beginPath();
+								var x = t*2*(r+1)+(r+1)
+								var y = i*2*(r+1)+(r+1)
+								txt.arc(x,y,r,0,2*Math.PI)
+								txt.fillStyle = "#fff"
+								txt.fill()
+								txt.closePath();
+							}
+					}	
+				}
+			}
+		</script>
+	</body>
+</html>

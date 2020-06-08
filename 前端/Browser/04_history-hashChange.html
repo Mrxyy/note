@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="h">dianji</button>
+		<button id="r">dianji</button>
+		<script type="text/javascript">
+			/*
+			  参数
+					1.当前状态存储的值
+					2.无意义
+					3.状态值
+			  */
+			// state 指的是 ？后面的值 
+			// 新加一个状态值，页面本身不会重载
+ 			history.pushState({page:1}, "title1", "?page=1");    //添加并激活一个历史记录条目 http://example.com/example.html?page=1,条目索引为1
+			history.pushState({page: 2}, "title 2", "?page=2");    //添加并激活一个历史记录条目 http://example.com/example.html?page=2,条目索引为2
+
+			//修改当前的状态值
+			 history.replaceState({page: 3}, "title 3", "?page=3"); //修改当前激活的历史记录条目 http://ex..?page=2 变为 http://ex..?page=3,条目索引为3
+			 // history.back(); // ?page=1页 go => ?page=3
+			 
+			window.onload = function(){
+				console.log(1)
+				h.onclick = function(){
+					window.history.pushState({"a":1},null,"#1")
+					history.pushState({page: 1}, "title 1", "?page=1")
+				}
+				// 只是将当前hash 更换
+				r.onclick = function(){
+					window.history.replaceState({"a":1},null,"#2")
+				}
+			}
+			
+			//改变状态时候触发
+			window.onpopstate = function(event) {
+			 console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+			};
+			
+			//改变状态不会触发hash
+			window.onhashchange = function(e){
+				console.log(e,"=>onhashchange")
+			}
+			// 通过这种方式改变sreach值不刷新
+		</script>
+	</body>
+</html>

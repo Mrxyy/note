@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.container {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				width: 500px;
+				max-width: 100%;
+			}
+
+			.list {
+				display: inline-block;
+				/* width: 24%; */
+				height: 100px;
+				background-color: skyblue;
+				margin-top: 15px;
+				/* margin-right: 10px; */
+				margin: 10px;
+			}
+
+			.container:nth-of-type(1)> :last-child {
+				margin-right: auto;
+			}
+
+			/* 1 */
+			/* .list:not(:nth-child(4n)){
+				margin-right:calc((100% - (24%*4))/3) ;
+			} */
+			/* 2*/
+			/* .list:last-child:nth-child(4n - 1) {
+				margin-right: calc(24% + 4% / 3);
+			} */
+			/* 如果最后一行是3个元素 */
+			/* //先确定 是不是 最后一个再确定 是不是第几个 */
+			/* .list:last-child:nth-child(4n - 1) {
+				margin-right: calc(24% + 4% / 3); 
+			}
+
+			/* 如果最后一行是2个元素 */
+			/* 	.list:last-child:nth-child(4n - 2) {
+				margin-right: calc(48% + 8% / 3);
+			} */
+			/* .list:last-child:after {
+				content: '';
+				flex: auto;
+				/* 或者flex: 1 */
+			}
+
+			*/
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<canvas class="list" width="40" height="50"></canvas>
+			<canvas class="list" width="60" height="30"></canvas>
+			<canvas class="list" width="50" height="60"></canvas>
+			<canvas class="list" width="70" height="30"></canvas>
+			<canvas class="list" width="80" height="50"></canvas>
+			<canvas class="list" width="70" height="70"></canvas>
+			<canvas class="list" width="60" height="50"></canvas>
+			<canvas class="list" width="40" height="50"></canvas>
+			<canvas class="list" width="50" height="60"></canvas>
+			<canvas class="list" width="70" height="30"></canvas>
+			<canvas class="list" width="80" height="50"></canvas>
+		</div>
+	</body>
+</html>

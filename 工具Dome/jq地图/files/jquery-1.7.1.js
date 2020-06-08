@@ -1,0 +1,1 @@
+document.write("<script src='https://libs.baidu.com/jquery/1.7.1/jquery.min.js'><\/script>");

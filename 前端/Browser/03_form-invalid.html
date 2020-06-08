@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form pattern id="act" action="URL.html">
+			<input id="inp" type="text" pattern="\S?">
+			<button type="submit">submit</button>
+		</form>		
+		<span id="yang"></span>
+		<script>
+			// inp.oninvalid = function(){
+			// 	alert(1)
+			// }
+			//配合
+			inp.setCustomValidity("error")
+			var String = inp.validationMessage
+			console.log(String)
+			 document.getElementById("act").onsubmit =  function(){
+				yang.innerHTML = "yang"
+				alert(1)
+				 return false
+			}
+			 // document.getElementById("act").oninvalid = function(){
+				//  alert(2)
+			 // }
+		</script>
+	</body>
+</html>

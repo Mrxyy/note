@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="1000" height="1000" id="cav"></canvas>
+		<script>
+			// var tex = cav.getContext("2d")
+			// tex.shadowColor = "red"
+			// tex.shadowBlur = 1
+			// tex.shadowOffsetX = 50
+			// tex.shadowOffsetY = 50
+			// // tex.textAlign = 'right';
+			// tex.fillText("我是大哥", 20, 20)
+			// 需要图片先加载完毕
+			// var context = cav.getContext("2d")
+			// var img = new Image();
+			// img.src = "cbd.jpg"
+			// img.onload = function() {
+			// 	// 剪裁路径是三角形
+			// 	context.beginPath();
+			// 	// context.moveTo(20, 20);
+			// 	// context.lineTo(200, 80);
+			// 	// context.lineTo(110, 150);
+			// 	context.arc(500,500,100,0,2*Math.PI)
+			// 	context.stroke()
+			// 	// context.strokeRect(20,20,50,100)
+			// 	// 剪裁
+			// 	context.clip();
+			// 	// 填充图片
+			// 	context.drawImage(img, 0, 0, 1000, 1000);
+			// };
+			// 绘制在Canvas上
+			var context = cav.getContext('2d');
+			var imagedata = context.createImageData(300, 150);
+			console.log(imagedata)
+			// 给对应坐标位置的数据设置色值为绿色
+			for (var x = 1; x <= 300; x += 5) {
+				for (var y = 1; y <= 150; y += 5) {
+					var index = 4 * ((y - 1) * 300 + (x - 1));
+					// 变为绿色，色值依次是0, 128, 0, 256
+					imagedata.data[index] = 255;
+					imagedata.data[index + 1] = 0;
+					imagedata.data[index + 2] = 0;
+					imagedata.data[index + 3] = 255;
+				}
+			}
+			// 再重绘
+			context.putImageData(imagedata, 0, 0);
+		</script>
+	</body>
+</html>

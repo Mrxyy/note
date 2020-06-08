@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			async function a(){
+			  await new Promise(function(s,r){
+				  setTimeout(function(){
+					  s(111)
+				  },1000)
+			  })
+			  console.log(123)
+			  throw new Error({a:1})
+			  return 123
+			}
+			a().then(function(a){
+				console.log(a)
+			},function(e){
+				console.log(e+1)
+			})
+			try{
+				throw new Error("error")
+			}catch(err){
+				throw err
+			}
+			new Promise(function(res,rej){
+				
+			}).then(function(){},function(){})
+		</script>
+	</body>
+</html>

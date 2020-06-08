@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#cav{
+				background: #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<video width="800" height="" controls="controls" id="img1">
+			<source src="myvideo.mp4"  type="video/mp4"></source>
+		</video>
+		<!-- <img src="cbd.jpg" id="img1"> -->
+		<button type="button" id="btn">截屏</button>
+		<canvas width="500" height="500" id="cav"></canvas>
+		<script>
+			var txt = cav.getContext('2d')
+			console.log(txt,img1)
+			txt.fillStyle = "#fff"
+			img1.onload = function(){
+				txt.drawImage(img1,0,0);
+				txt.drawImage(img1,20,20);
+			}
+			setInterval(function(){
+				txt.drawImage(img1,0,0);
+			},0.2)
+			btn.onclick = function(){
+				txt.drawImage(img1,0,0);
+			}
+		</script>
+	</body>
+</html>

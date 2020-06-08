@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				height: 500px;
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div>
+			
+		</div>
+		<div>
+			<img src="" >
+			轻茶奶茶店
+			地址：宜昌十猇亭区人人惠市场
+			电话：13487211838
+		</div>
+		<script src="https://webapi.amap.com/maps?v=1.4.15&key=364ea2469a03ec70213f0ec82322ca6e"></script>
+		<script type="text/javascript">
+			var map = new AMap.Map('container', {
+				center: [111.447063, 30.547252],
+				zoom:15,
+			});
+			var trafficLayer = new AMap.TileLayer.Traffic({
+				zIndex: 5 
+			});
+			var marker = new AMap.Marker({
+				position: [111.447063, 30.547252] //位置
+			})
+			map.add(trafficLayer); //添加图层到地图
+			var infoWindow = new AMap.InfoWindow({ //创建信息窗体
+				isCustom: true, //使用自定义窗体
+				content: '<div>轻茶奶茶店</div>', //信息窗体的内容可以是任意html片段
+				offset: new AMap.Pixel(16, -45)
+			});
+			var onMarkerClick = function(e) {
+				infoWindow.open(map, e.target.getPosition()); //打开信息窗体
+				//e.target就是被点击的Marker
+			}
+			map.add(marker);//添加到地图
+			marker.on('click', onMarkerClick); //绑定click事件
+		</script>
+	</body>
+</html>

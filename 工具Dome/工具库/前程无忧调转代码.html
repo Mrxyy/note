@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a id="a" href="http://campus.51job.com/test/hzzy-xyy/index.html">点</a>
+		<script>
+		console.log(location.href.split(/\/{2}|\//))
+			function tz(str){
+				var a = location.href.split(/\/{2}|\//)[1]
+				var b = str.split(/\/{2}|\//)[1]
+				if(a != b){
+					flag = window.confirm("显示您将离开前程无忧网站是否继续")
+					// console.log(flag)
+					return flag
+				}
+			}
+			a.onclick = function (){
+					return tz("ss")
+			}
+			 // tz("1")
+		</script>
+	</body>
+</html>

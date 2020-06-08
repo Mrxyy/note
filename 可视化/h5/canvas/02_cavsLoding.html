@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="cav" width="100" height="100"></canvas>
+		<script>
+			
+			var t = 0 
+			var tex = cav.getContext("2d")
+			// 找到圆心,画圆
+			// 定义
+			var cir = {
+					o:[50,50],
+					r:20
+			} 
+				// 线长
+			var long = 20
+			setInterval(load,100)
+			function load(){
+				tex.clearRect(0,0,1000,1000)
+				// 画出斜线段
+				// 1. 旋转坐标轴
+				// 2.描点连线
+				for(var i = 0;i<360;i+=45){
+					tex.beginPath()
+					// console.log(i)
+					// 半径切点 即为-起点
+				// 更具 x = x+r.cos(i) y= y - r.sin(i)
+				// 终点为 x = x + (r+long)*cos(i)
+				// y = y - (r+long)*sin(i)
+				var cos = Math.cos((i+t)/180*Math.PI)
+				var sin = Math.sin((i+t)/180*Math.PI)
+				// console.log(cos,sin)
+				tex.moveTo(cir.o[0]+cir.r*cos,cir.o[1]-cir.r*sin)
+				tex.lineTo(cir.o[0]+(cir.r+long)*cos,cir.o[1]-(cir.r+long)*sin)
+				tex.lineWidth = 3
+				tex.lineCap = "round"
+				tex.strokeStyle = "rgba(0,0,0,"+(i+50)/360+")"
+				tex.stroke()
+				}
+				t+= 45
+			}
+		</script>
+	</body>
+</html>

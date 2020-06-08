@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="city.js"></script>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        //下面的是测试代码
+//接口返回的数据
+        let dataAPI = {
+            "status": "1",
+            "message": "接口调用成功",
+            "resultbody": {
+                "coid": [
+                    {"key": "3940114", "value": "星巴克咖啡（深圳）有限公司", "coorder": "0"}, {
+                        "key": "2283687",
+                        "value": "星巴克咖啡（辽宁）有限公司",
+                        "coorder": "0"
+                    },
+                    {"key": "2283685", "value": "湖北星巴克咖啡有限公司", "coorder": "0"}, {
+                        "key": "2283683",
+                        "value": "西安星巴克咖啡有限公司",
+                        "coorder": "0"
+                    },
+                    {"key": "2134743", "value": "星巴克咖啡（大连）有限公司", "coorder": "0"}, {
+                        "key": "2059725",
+                        "value": "成都星巴克咖啡有限公司",
+                        "coorder": "0"
+                    },
+                    {"key": "2059724", "value": "青岛美国星巴克咖啡有限公司", "coorder": "0"}, {
+                        "key": "2057737",
+                        "value": "北京星巴克咖啡有限公司",
+                        "coorder": "0"
+                    },
+                    {"key": "2037224", "value": "广东星巴克咖啡有限公司", "coorder": "0"}, {
+                        "key": "2035635",
+                        "value": "上海星巴克咖啡经营有限公司",
+                        "coorder": "0"
+                    },
+                    {"key": "1253542", "value": "星巴克中国", "coorder": "0"}
+                ],
+                "divid": [{"key": "4341407", "value": "支持中心", "divorder": "0"}],
+                "jobarea": [{"key":"070000","value":"江苏省"},{"key":"070200","value":"南京"},{"key":"070500","value":"常州"},{"key":"080000","value":"浙江省"},{"key":"080200","value":"杭州"},{"key":"080300","value":"宁波"},{"key":"080500","value":"绍兴"},{"key":"080700","value":"嘉兴"},{"key":"080800","value":"台州"},{"key":"080900","value":"湖州"},{"key":"081400","value":"义乌"},{"key":"090000","value":"四川省"},{"key":"092300","value":"凉山"},{"key":"120000","value":"山东省"},{"key":"120200","value":"济南"},{"key":"120300","value":"青岛"},{"key":"170000","value":"河南省"},{"key":"170200","value":"郑州"},{"key":"170400","value":"开封"},{"key":"170700","value":"新乡"},{"key":"170800","value":"周口"},{"key":"171400","value":"驻马店"},{"key":"200000","value":"陕西省"},{"key":"200200","value":"西安"},{"key":"250000","value":"云南省"},{"key":"250500","value":"大理"}] ,
+                "functype": [
+                    {"key": "0100", "value": "计算机软件"}, {"key": "0108", "value": "--数据库工程师\/管理员"}, {
+                        "key": "0300",
+                        "value": "市场\/营销"
+                    }, {"key": "0302", "value": "--市场\/营销\/拓展经理"}, {"key": "0304", "value": "--市场\/营销\/拓展专员"}, {
+                        "key": "0306",
+                        "value": "--产品\/品牌经理"
+                    }, {"key": "0324", "value": "--市场分析\/调研人员"}, {"key": "0338", "value": "--选址拓展\/新店开发"}, {
+                        "key": "0400",
+                        "value": "财务\/审计\/税务"
+                    }, {"key": "0402", "value": "--财务经理"}, {"key": "0403", "value": "--财务主管\/总账主管"}, {
+                        "key": "0404",
+                        "value": "--会计经理\/会计主管"
+                    }, {"key": "0405", "value": "--会计"}, {"key": "0407", "value": "--财务分析员"}, {
+                        "key": "0412",
+                        "value": "--税务专员\/助理"
+                    }, {"key": "0443", "value": "--其他"}, {"key": "0600", "value": "人力资源"}, {
+                        "key": "0602",
+                        "value": "--人事经理"
+                    }, {"key": "0604", "value": "--人事专员"}, {"key": "0607", "value": "--薪资福利经理\/主管"}, {
+                        "key": "0610",
+                        "value": "--培训专员\/助理\/培训师"
+                    }, {"key": "0611", "value": "--HRBP"}, {"key": "0625", "value": "--其他"}, {
+                        "key": "0630",
+                        "value": "--人力资源信息系统专员"
+                    }, {"key": "0800", "value": "物流\/仓储"}, {"key": "0825", "value": "--供应链经理"}, {
+                        "key": "0826",
+                        "value": "--供应链主管\/专员"
+                    }, {"key": "1600", "value": "在校学生"}, {"key": "1602", "value": "--大学\/大专应届毕业生"}, {
+                        "key": "1700",
+                        "value": "储备干部\/培训生\/实习生"
+                    }, {"key": "1701", "value": "--培训生"}, {"key": "1703", "value": "--实习生"}, {
+                        "key": "1900",
+                        "value": "其他"
+                    }, {"key": "1901", "value": "--其他"}, {"key": "2300", "value": "行政\/后勤"}, {
+                        "key": "2302",
+                        "value": "--行政经理\/主管\/办公室主任"
+                    }, {"key": "2303", "value": "--行政专员\/助理"}, {"key": "2305", "value": "--前台接待\/总机\/接待生"}, {
+                        "key": "2309",
+                        "value": "--其他"
+                    }, {"key": "2500", "value": "互联网\/电子商务\/网游"}, {"key": "2504", "value": "--网络工程师"}, {
+                        "key": "2509",
+                        "value": "--网络信息安全工程师"
+                    }, {"key": "2512", "value": "--网站架构设计师"}, {"key": "2537", "value": "--手机应用开发工程师"}, {
+                        "key": "2600",
+                        "value": "IT-管理"
+                    }, {"key": "2606", "value": "--项目经理"}, {"key": "2700", "value": "IT-品管、技术支持及其它"}, {
+                        "key": "2711",
+                        "value": "--其他"
+                    }, {"key": "3100", "value": "销售行政及商务"}, {"key": "3103", "value": "--商务经理"}, {
+                        "key": "3200",
+                        "value": "客服及支持"
+                    }, {"key": "3202", "value": "--客服经理"}, {"key": "3500", "value": "生产\/营运"}, {
+                        "key": "3505",
+                        "value": "--营运经理"
+                    }, {"key": "3600", "value": "质量安全"}, {"key": "3601", "value": "--质量管理\/测试经理(QA\/QC经理)"}, {
+                        "key": "3900",
+                        "value": "采购"
+                    }, {"key": "3902", "value": "--采购经理"}, {"key": "3908", "value": "--买手"}, {
+                        "key": "4100",
+                        "value": "生物\/制药\/医疗器械"
+                    }, {"key": "4121", "value": "--政府事务管理"}, {"key": "4300", "value": "公关\/媒介"}, {
+                        "key": "4301",
+                        "value": "--公关经理"
+                    }, {"key": "4303", "value": "--公关专员"}, {"key": "4311", "value": "--其他"}, {
+                        "key": "4600",
+                        "value": "房地产开发"
+                    }, {"key": "4601", "value": "--房地产项目\/策划经理"}, {"key": "4800", "value": "餐饮服务"}, {
+                        "key": "4801",
+                        "value": "--店长\/经理"
+                    }, {"key": "4802", "value": "--餐厅领班"}, {"key": "4816", "value": "--咖啡师"}, {
+                        "key": "4820",
+                        "value": "--西餐厨师"
+                    }, {"key": "4823", "value": "--西点师"}, {"key": "5100", "value": "百货零售"}, {
+                        "key": "5101",
+                        "value": "--卖场经理\/店长"
+                    }, {"key": "5102", "value": "--店员\/营业员"}, {"key": "5103", "value": "--收银主管"}, {
+                        "key": "5107",
+                        "value": "--其他"
+                    }]
+            }
+        }
+        console.log("使用方式：页面script标签引入city.min.js");
+        console.log('--------------------------------------------------');
+        console.log("使用示例：cityTransformer.findNameByCode('010000');");
+        console.log('说明：省市查找');
+        console.log('本地省市配置数据中没有区，所以区是搜不到的');
+        console.log(cityTransformer.findNameByCode('032000'));
+        console.log(cityTransformer.findNameByCode('060600'));
+        console.log(cityTransformer.findNameByCode('070203'));
+        console.log('--------------------------------------------------');
+
+        console.log("使用示例： cityTransformer.fillCities(apiJobArea);");
+        console.log("说明： 补全接口数据中缺少的城市");
+        let apiJobArea = dataAPI.resultbody.jobarea;
+        console.log('填充前的城市共有' + apiJobArea.length + '个，列表为：');
+        console.log(apiJobArea);
+        cityTransformer.fillCities(apiJobArea);
+        console.log('填充后的城市共有' + apiJobArea.length + '个，列表为：');
+        console.log(apiJobArea);
+        console.log('--------------------------------------------------');
+
+        console.log("使用示例： cityTransformer.toTree(apiJobArea);");
+        console.log('说明：接口数据转换为省-市-区的三层数据结构')
+		console.log(apiJobArea)
+        let treeDataMap = cityTransformer.toTree(apiJobArea)
+        console.log(treeDataMap);
+        console.log('--------------------------------------------------');
+
+        console.log("根据地区编码在指定数据源中获取名称(包括名称和全名)");
+        console.log(cityTransformer.findNameByCode('080205', cityTransformer.transformCityData(treeDataMap)));
+    }
+</script>
+</body>
+</html>
