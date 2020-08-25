@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let p = function(a){}
+			let handler = {
+				get(obj,prop,receiver){
+					console.log(obj,prop,receiver);
+					return prop
+				},
+				apply(target, thisArg, argumentsList){
+					console.log(target, thisArg, argumentsList);
+				}
+			}
+			let c = new Proxy(p,handler)
+			c.o = 5
+			console.log(c.o,p);
+			console.log(c(1));
+		</script>
+	</body>
+</html>

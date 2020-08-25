@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<div id="app">
+<<<<<<< HEAD
 			<yang-tem1 a="5">
 			</yang-tem1>
 		</div>
@@ -45,10 +46,78 @@
 				      }},[this.$scopedSlots.default(function(props){a:"1121"})]
 				    )
 				  ]内部 )
+=======
+			<yang-tem1 a="5555">
+				<template #y>
+					55566
+					<div>123</div>
+				</template>
+			</yang-tem1>
+		</div>
+		<script id="yang-tem" type="text/template" src="js/vue.js">
+			<div>
+				<span>模板</span>
+				<slot name="yang"></slot>
+				<span>模板</span>
+			</div>
+		</script>
+		<script src="js/vue.js" type="text/javascript"></script>
+		<script>
+			Vue.component("yang-tem1",{
+				props:["a"],
+				functional:true,
+				render(h,con){
+					console.log(con)
+					return h("div",{
+						props:{
+							a:5555
+						}
+					},[this.$slots.default,this.$slots.y,this.a])
+>>>>>>> 1e33dee064cf386b03c2d990e3f1277656fb211c
 				}
 			})
 			new Vue({
 				el:"#app"
+<<<<<<< HEAD
+=======
+				// render: (render) => {
+				// 	return render(
+				// 	// 组件模板， String / ObjectVue / async Function
+				// 	{template:"#yang-tem",mounted() {
+				// 	console.log(this)
+				// }},
+				// 	// 选项，对象
+				// 	{},
+				// 	// 子节点 数组 或者 字符串
+				// 	[]
+				// 	)
+				// },
+				// props: ['value'],
+				// render: function (createElement) {
+				//   var self = this
+				//   return createElement('input', {
+				//     domProps: {
+				//       value: self.value
+				//     },
+				//     on: {
+				//       input: function (event) {
+				// 		 self.value = event.target.value
+				// 		 console.log(self)
+				//         // self.$emit('input', event.target.value)
+				//       }
+				//     }
+				//   })
+				// }
+				
+				// components:{
+				// 		"yang-tem":{
+				// 			template:"#yang-tem",
+				// 			mounted() {
+				// 				console.log(this.$slots)
+				// 				}
+				// 		}
+				// }
+>>>>>>> 1e33dee064cf386b03c2d990e3f1277656fb211c
 			})
 		</script>
 	</body>
