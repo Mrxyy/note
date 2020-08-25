@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#el{
+				display: none;
+			}
+			p{
+				color: red;
+				animation:name 2s ;
+			}
+			.p{
+				transition: all 10s;
+			}
+			.p1{
+				color: #fff;
+			}
+			.p3{
+				color: #0000FF;
+			}
+			@keyframes name{
+				from{
+					color: red;
+				}
+				to{
+					color: yellow;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button">btn</button>
+		<div>
+			<div id="el">
+				23323
+			</div>
+			<p id="p">123333333333333333333333333333333333333333333333333333</p>
+		</div>
+		<script>
+			let btn = document.querySelector('button')
+			var w = true
+			btn.onclick = function(){
+				// document.querySelector('#el').style.display = "block"
+				// p.style.color = '#fff'
+				p.classList.add('p1') //红色
+				void p.offsetHeight
+				p.classList.add('p3') 
+				// void p.offsetHeight
+				console.log(p.offsetHeight,p.style.color)
+				// p.classList.remove('p3') 
+				p.classList.add('p') 
+				
+				// gui线程会等js线程执行完成
+				var l = Date.now() + 3000
+				console.log(l)
+				while(Date.now() < l){
+					console.log(l)
+				}
+				// setTimeout(function(){alert(1)},0)
+				// alert(1)
+				// p.classList.remove('p3')
+				// p.style.color = 'green'
+			}
+		</script>
+	</body>
+</html>

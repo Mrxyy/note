@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="konva.min.js"></script>
+		<script>
+			console.log(Konva);
+			// 场地
+			var stage = new Konva.Stage({
+				container:"app",
+				width:300,
+				height:500
+			})
+			
+			//声明一个层级
+			var layer = new Konva.Layer()
+			
+			//声明一个性状（shape）
+			var circle = new Konva.Circle({
+				x:stage.width() / 2,
+				y:stage.height() / 2,
+				radius:70,
+				fill:'red',
+				stroke:"#000",
+				strokeWidhd:4
+			})
+			var triangle = new Konva.Shape({
+			      sceneFunc: function(context) {
+			        context.beginPath();
+			        context.moveTo(20, 50);
+			        context.lineTo(220, 80);
+			        context.quadraticCurveTo(150, 100, 260, 170);
+			        context.closePath();
+			
+			        // special Konva.js method
+			        context.fillStrokeShape(this);
+			      },
+			      fill: '#00D2FF',
+			      stroke: 'black',
+			      strokeWidth: 4
+			});
+			circle.draggable('true')
+			// 将shape 添加到circle 上
+			layer.add(circle)
+			layer.add(triangle)
+			// 将图层添加到stage 
+			stage.add(layer)
+			
+			// 将图层绘画出来
+			layer.draw()
+		</script>
+	</body>
+</html>

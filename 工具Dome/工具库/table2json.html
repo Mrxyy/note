@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="reset.min.css" />
+	</head>
+	<style type="text/css">
+		#Tit {
+			width: 1000px;
+			margin: 50px auto;
+			text-align: justify;
+			border: 1px salmon solid;
+			color: #333;
+			font-size: 12px;
+			min-height: 50px;
+			max-height: 800px;
+			overflow-y: scroll;
+			padding: 20px;
+		}
+	</style>
+	<body>
+		输入转换：
+		<input type="text" id="input">
+		输入字段：
+		<input type="text" id="keyword">
+		<button id="produce">launch</button>
+		<div id="Tit">
+
+		</div>
+		<script>
+			// 按类型划分
+			function bol(obj, str) {
+				var preObj = obj[0] //初始化
+				var All = [] //str不同为分界的数组
+				var arr = [] //boj中str属性相同的集合数组
+				for (v of obj) {
+					// if (v[str].replace(/（.*）/g,"") != preObj[str].replace(/（.*）/g,""))
+					//判断当前对象是否是新建立的,建立条件是按echart表格工具转成结果
+					if ((v[str] == preObj[str]) || (v[str] == "-") || !v[str]) {
+						arr.push(v)
+					} else {
+						//判断是非为空数组加入，且处理初始化arr为空加入问题
+						if (arr.length) {
+							All.push(arr.slice())
+							arr = []
+						}
+						arr.push(v)
+						preObj = v
+					}
+				}
+				All.push(arr.slice())
+				console.log(All)
+				//为对象的形式展示
+				var objs = {}
+				for (v of All) {
+					objs[v[0][str]] = v
+					// objs[v[0][str].replace(/（.*）/g,"")] = v
+				}
+				//转为字符串的形式展现在页面
+				Tit.innerText = JSON.stringify(objs)
+			}
+			produce.onclick = function() {
+				//将json转为对象
+				bol(JSON.parse(input.value), keyword.value)
+			}
+		</script>
+	</body>
+</html>
+
