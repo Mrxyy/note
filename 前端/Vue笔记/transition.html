@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes bounce-in {
+				0% {
+					transform: scale(0);
+				}
+
+				50% {
+					transform: scale(1.5);
+				}
+
+				100% {
+					transform: scale(1);
+				}
+			}
+
+			#ps {
+				animation: bounce-in 5.5s;
+			}
+
+			.v-enter-active {
+				animation: bounce-in 5.5s;
+			}
+
+			/* .bounce-enter {
+			  animation: bounce-in 5.5s;
+			}
+			/* .bounce-enter-active {
+			  animation: bounce-in 5.5s;
+			} */
+			.bounce-leave-active {
+				animation: bounce-in .5s reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="btn">btn</button>
+		<script type="text/javascript">
+			btn.onclick = function() {
+				this.className = "s1"
+				this.style.display = 'none'
+				console.log(btn)
+			}
+		</script>
+		<div id="app">
+			<button @click="show = !show;">switchStatus</button>
+			<!-- <transition>
+				<div v-show="show" class="s4">
+					我是动画
+				</div>
+			</transition> -->
+			<transition type="animation" :duration="{ enter: 5000, leave: 800 }">
+				<p id="ps" v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at
+					lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+			</transition>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					show: false
+				},
+			})
+		</script>
+	</body>
+</html>

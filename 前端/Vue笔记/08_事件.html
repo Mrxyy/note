@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="li">destroy</button>
+			<yang-tem></yang-tem>
+		</div>
+		<script type="text/javascript" src="./js/vue.js"></script>
+		<script id="yang-tem" type="text/template">
+			<div>
+				开始
+			</div>	
+		</script>
+		<script>
+			u = new Vue({
+				el:"#app",
+				components:{
+					"yang-tem":{
+						template:"#yang-tem"
+					},
+					destroyed() {
+						console.log(1)
+					}
+				},
+				methods:{
+					li:function(){
+						this.$destroy()
+					}
+				},
+				destroyed() {
+					console.log(0)
+				}
+			})
+		</script>
+	</body>
+</html>

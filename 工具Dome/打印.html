@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>缩放打印与分页</title>
+<script type="text/javascript"> 
+	function printpage1(){    
+			
+			// body全局打印
+			// 页面缩放，此处缩放为50%，不缩放的话页面超出就打印不出来，这个需要自己调试，看自己
+			document.getElementsByTagName('body')[0].style.zoom=0.5;
+			
+			// 调用window的打印功能
+			window.print(); 
+			
+			// 将页面缩放调整到最初状态
+			document.getElementsByTagName('body')[0].style.zoom=1;
+			return false; 
+		}
+		
+		function printpage2(){    
+			// 局部打印
+			// 获取局部打印数据
+			var newstr = document.getElementById("println_div").innerHTML;
+			// 缓存body全部数据
+			var oldstr = document.body.innerHTML; 
+			// 将局部数据放入body内
+			document.body.innerHTML = newstr; 
+			
+			// 页面缩放，此处缩放为50%，不缩放的话页面超出就打印不出来，这个需要自己调试，看自己
+			document.getElementsByTagName('body')[0].style.zoom=0.5;
+			
+			// 调用window的打印功能
+			window.print(); 
+			
+			// 打印完成将body数据还回去
+			document.body.innerHTML = oldstr; 
+
+			// 将页面缩放调整到最初状态
+			document.getElementsByTagName('body')[0].style.zoom=1;
+			return false; 
+		}
+</script>
+</head>
+  
+<body>
+<p>1</p>
+<p>2</p>
+<div id="println_div">
+	<h1>打印标题</h1>
+	<p>打印内容~~</p>
+	<!-- style属性这里是在打印的时候，在标签之前的将作为1页，标签之后作为新的页 -->
+	<div style="page-break-before:always;"><br /></div>
+	<h1>打印标题</h1>
+	<p>打印内容~~</p>
+	<div  style="page-break-before:always;"><br /></div>
+	<h1>打印标题</h1>
+	<p>打印内容~~</p>
+</div>
+<button type="button" onclick="printpage1()">全局打印</button>
+<button type="button" onclick="printpage2()">局部打印</button>
+<p>1</p>
+<p>2</p>
+</body>
+</html>

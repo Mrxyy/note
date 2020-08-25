@@ -10,6 +10,7 @@
 
 <body>
     <img src="img1.jpg" alt="" style="margin-top:1000px;">
+	<img src="https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=520&h=347" >
     <script src="jquery-1.11.0.min.js"></script>
     <script src="html2canvas.js"></script>
     <script>
@@ -119,6 +120,7 @@
         // 生成截图
         function takeScreenshot() {
             html2canvas(document.body,{
+				allowTaint:true,
                 width: $("#tu").outerWidth(),
                 height:$('#tu').outerHeight(),
                 x:$('#tu').offset().left,

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="like_button_container"></div>
+		 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+		 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		 <script type="text/babel">
+		 	'use strict';
+		 	
+		 	const e = React.createElement;
+		 	
+		 	class LikeButton extends React.Component {
+		 	  constructor(props) {
+		 	    super(props);
+		 	    this.state = { liked: false };
+		 	  }
+		 	
+		 	  render() {
+		 	    if (this.state.liked) {
+		 	      return e(
+		 	        'a',
+		 	        { onClick: () => this.setState({ liked: false }) },
+		 	        'a'
+		 	      );
+		 	    }
+		 	
+		 	    return e(
+		 	      'button',
+		 	      { onClick: () => this.setState({ liked: true }) },
+		 	      'Like'
+		 	    );
+		 	  }
+		 	}
+			const domContainer = document.querySelector('#like_button_container');
+			console.log(e(LikeButton))
+			ReactDOM.render(<button onClick={() => this.setState({ liked: true })}>
+		 	         Like
+		 	       </button>, domContainer);
+			
+		 </script>
+	</body>
+</html>

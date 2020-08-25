@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="" value="1" v-model.lazy="inp" />
+			<button id="launch">launch</button>
+		</div>
+		<script id="yang-tem" type="text/template"></script>
+		<script src="js/vue.js"></script>
+		<script>
+			
+			function a() {
+				return new Promise(function(res, rej) {
+					 launch.onclick = function(){
+						 res(1)
+					 }
+				})
+			}
+			
+			var prm = a()
+
+			prm.then(function(b) {
+				console.log(b)
+			})
+			
+		</script>
+	</body>
+</html>

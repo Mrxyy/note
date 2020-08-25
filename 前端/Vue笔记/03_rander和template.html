@@ -5,5 +5,51 @@
 		<title></title>
 	</head>
 	<body>
+		<div id="app">
+			<yang-tem1 a="5">
+			</yang-tem1>
+		</div>
+		<script id="yang-tem" type="text/template"></script>
+		<script src="js/vue.js"></script>
+		<script>
+			Vue.component("yang-tem1",{
+				props:["a"],
+				// render(h) {
+				// 	console.log(this.$slots.default)
+				// 	return h(
+				// 	{
+				// 		props:["a"],
+				// 		template:"<div>{{a}}<slot></slot></div>"
+				// 	}
+				// 	// "div"
+				// 	,{
+				// 		props:{
+				// 			a:123
+				// 		},
+				// 		attrs:{
+				// 			a:456
+				// 		}
+				// 	},[this.$slots.default])
+				// }
+				render: function (createElement) {
+				  // `<div><child v-slot="props"><span>{{ props.text }}</span></child></div>`
+				  return createElement('div', [
+				    createElement('div', {
+				      // 在数据对象中传递 `scopedSlots`
+				      // 格式为 { name: props => VNode | Array<VNode> }
+				      scopedSlots: {
+				        default: function (props) {
+							console.log(props)
+				             return createElement('span', props.a)
+				        }
+				      }},[this.$scopedSlots.default(function(props){a:"1121"})]
+				    )
+				  ]内部 )
+				}
+			})
+			new Vue({
+				el:"#app"
+			})
+		</script>
 	</body>
 </html>
