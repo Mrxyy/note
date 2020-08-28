@@ -1,0 +1,719 @@
+/* _LocalBinding _lcid="2052" _version="15.0.rup" */
+/*
+	Copyright (c) Microsoft Corporation.  All rights reserved.
+*/
+.ewa-nov2-rtl, .ewa-nov2-ltr
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: "Microsoft Yahei UI","Microsoft Yahei","Î¢ÈíÑÅºÚ",SimSun,"ËÎÌå", sans-serif;
+}
+.ewa-nov2-rtl .ewa-nov2-ie10-jitscroll, .ewa-nov2-ltr .ewa-nov2-ie10-jitscroll
+{
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.msospAFrameContainerNov
+{
+	font-size: 9pt;
+	font-family: "Microsoft Yahei UI","Microsoft Yahei","Î¢ÈíÑÅºÚ",SimSun,"ËÎÌå", sans-serif;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.ewa-nov2-foreground
+{
+	color:#262626;
+}
+.ewa-nov2-viewport
+{
+	position: absolute;
+	top: 27px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	min-width: 700px;
+}
+.ewa-nov2-content-panes
+{
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	z-index: 1;
+	left: 40px;
+	right: 40px;
+}
+.ewa-nov2-slicers
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+	width: 250px;
+	background-color: #217346;
+	color: #FFFFFF;
+}
+.ewa-nov2-ltr .ewa-nov2-slicers
+{
+	left: 0;
+}
+.ewa-nov2-rtl .ewa-nov2-slicers
+{
+	right: 0;
+}
+.ewa-nov2-slicersframe
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.ewa-nov2-focus
+{
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	bottom: 0;
+}
+.ewa-nov2-ltr .ewa-nov2-focus
+{
+	left: 250px;
+	right: 152px;
+}
+.ewa-nov2-rtl .ewa-nov2-focus
+{
+	left: 152px;
+	right: 250px;
+}
+.ewa-nov2-taskpane
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 152px;
+	background-color: #FFFFFF;
+}
+.ewa-nov2-ltr .ewa-nov2-taskpane
+{
+	border-left: 1px solid #E1E1E1;
+}
+.ewa-nov2-rtl .ewa-nov2-taskpane
+{
+	border-right: 1px solid #E1E1E1;
+}
+.ewa-nov2-taskpane.ewa-ee-taskpane
+{
+	background-color: #F0F0F0;
+	border-left: none;
+	border-right: none;
+}
+.ewa-nov2-ie8 .ewa-nov2-taskpane-transparency
+{
+	filter: alpha(opacity=0);
+}
+.ewa-nov2-non-ie8 .ewa-nov2-taskpane-transparency
+{
+	opacity: 0;
+}
+.ewa-nov2-ltr .ewa-nov2-taskpane
+{
+	right: 0;
+}
+.ewa-nov2-rtl .ewa-nov2-taskpane
+{
+	left: 0;
+}
+.ewa-nov2-action-toolbar-container
+{
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	width: 40px;
+	opacity: 0;
+	background-color: #076331;
+	z-index: 2;
+}
+.ewa-nov2-ltr .ewa-nov2-action-toolbar-container
+{
+	left: 0;
+}
+.ewa-nov2-rtl .ewa-nov2-action-toolbar-container
+{
+	right: 0;
+}
+.ewa-taskpane-toolbar-container
+{
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	width: 40px;
+	opacity: 0;
+	background-color: #F0F0F0;
+	z-index: 2;
+}
+.ewa-nov2-ltr .ewa-taskpane-toolbar-container
+{
+	right: 0;
+}
+.ewa-nov2-rtl .ewa-taskpane-toolbar-container
+{
+	left: 0;
+}
+.ewa-nov2-header
+{
+	font-size: 112.5%;
+	margin-top: 3px;
+	width: 100%;
+	color:#777777;
+	padding-bottom: 3px;
+	height: 20px;
+	overflow: hidden;
+	border-bottom: 1px solid #E1E1E1;
+}
+.ewa-nov2-zone-header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+}
+.ewa-nov2-zone-body
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	filter: inherit;
+}
+.ewa-nov2-focus .ewa-nov2-zone-body
+{
+	top: 64px;
+	left: 40px;
+	right: 40px;
+	bottom: 40px;
+}
+.ewa-nov2-slicers-body
+{
+	overflow-x: hidden;
+	position: absolute;
+	top: 66px;
+	bottom: 0;
+}
+.ewa-nov2-ltr .ewa-nov2-slicers-body
+{
+	padding-right: 25px;
+}
+.ewa-nov2-rtl .ewa-nov2-slicers-body
+{
+	padding-left: 25px;
+}
+.ewa-nov2-slicer-collapse, .ewa-nov2-slicer-expand,
+.ewa-nov2-taskpane-collapse, .ewa-nov2-taskpane-expand
+{
+	cursor: pointer;
+}
+.ewa-nov2-slicer-collapse-container, .ewa-nov2-slicer-expand-container,
+.ewa-nov2-taskpane-collapse-container, .ewa-nov2-taskpane-expand-container
+{
+	position: absolute;
+	padding: 10px;
+	top: 14px;
+	z-index: 3;
+}
+.ewa-nov2-ltr .ewa-nov2-slicer-collapse-container,
+.ewa-nov2-ltr .ewa-nov2-taskpane-collapse-container,
+.ewa-nov2-ltr .ewa-nov2-taskpane-expand-container
+{
+	right: 5px;
+}
+.ewa-nov2-rtl .ewa-nov2-slicer-collapse-container,
+.ewa-nov2-rtl .ewa-nov2-taskpane-collapse-container,
+.ewa-nov2-rtl .ewa-nov2-taskpane-expand-container
+{
+	left: 5px;
+}
+.ewa-nov2-slicer-expand-container,
+.ewa-taskpane-toolbar-container .ewa-nov2-taskpane-collapse-container,
+.ewa-taskpane-toolbar-container .ewa-nov2-taskpane-expand-container
+{
+	right: 2px;
+}
+.ewa-nov2-slicer-collapse:hover .ewanov_chevronLeftFilter, .ewa-nov2-slicer-expand:hover .ewanov_chevronRightFilter,
+.ewa-nov2-taskpane-collapse:hover .ewanov_chevronRightView, .ewa-nov2-taskpane-expand:hover .ewanov_chevronLeftView
+{
+	margin-top: -16px;
+}
+.ewa-nov2-zone-label, .ewa-nov2-pane-title
+{
+	margin-top: 12px;
+	font-size: 19.5pt;
+	overflow: hidden;
+	white-space: nowrap;
+	font-weight:lighter;
+	cursor: default;
+}
+.ewa-nov2-zone-label
+{
+	text-overflow: ellipsis;
+}
+.ewa-nov2-pane-title
+{
+	margin-bottom: 18px;
+	text-overflow: clip;
+	position: absolute;
+}
+.ewa-nov2-taskpane .ewa-nov2-pane-title
+{
+	color: #666666;
+}
+.ewa-nov2-ltr .ewa-nov2-pane-title
+{
+	text-align: left;
+	right: 25px;
+}
+.ewa-nov2-rtl .ewa-nov2-pane-title
+{
+	text-align: right;
+	left: 25px;
+}
+.ewa-nov2-ltr .ewa-nov2-taskpane .ewa-nov2-pane-title
+{
+	left: 17px;
+}
+.ewa-nov2-rtl .ewa-nov2-taskpane .ewa-nov2-pane-title
+{
+	right: 17px;
+}
+.ewa-nov2-ltr .ewa-nov2-slicers .ewa-nov2-pane-title
+{
+	left: 13px;
+}
+.ewa-nov2-rtl .ewa-nov2-slicers .ewa-nov2-pane-title
+{
+	right: 13px;
+}
+.ewa-nov2-taskpane .ewa-nov2-taskpane-container
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.ewa-nov2-ltr .ewa-nov2-taskpane .ewa-nov2-taskpane-container
+{
+	padding-left: 17px;
+	padding-right: 15px;
+}
+.ewa-nov2-rtl .ewa-nov2-taskpane .ewa-nov2-taskpane-container
+{
+	padding-left: 15px;
+	padding-right: 17px;
+}
+.ewa-nov2-tp-container
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.ewa-nov2-tp-btgrup
+{
+	position: absolute;
+	bottom: 0;
+	top: 64px;
+	left: 0;
+	right: 0;
+}
+.ewa-nov2-tp-bt
+{
+	position: relative;
+	cursor: pointer;
+	height: 32px;
+	left: 0;
+	right: 0;
+	margin-bottom: 5px;
+}
+.ewa-taskpane-toolbar-container .ewa-nov2-tp-bt-active
+{
+	background-color: #FFFFFF;
+}
+.ewa-nov2-action-toolbar-container .ewa-nov2-tp-bt-active
+{
+	background-color: #217346;
+}
+.cui-disabled .ewa-nov2-tp-bt-img-ct.cui-img-container
+{
+	background-color: transparent;
+}
+.usehover .ewa-taskpane-toolbar-container .ewa-nov2-tp-bt:hover
+{
+	background-color: #E1E1E1;	
+}
+.usehover .ewa-nov2-action-toolbar-container .ewa-nov2-tp-bt:hover
+{
+	background-color: #439467;
+}
+.ewa-taskpane-toolbar-container .ewa-nov2-tp-bt.ewa-nov2-tp-bt-enabled:active
+{
+	background-color: #C6C6C6;
+}
+.ewa-nov2-action-toolbar-container .ewa-nov2-tp-bt.ewa-nov2-tp-bt-enabled:active
+{
+	background-color: #0A6332;
+}
+.ewa-nov2-slicers-pane, .ewa-nov2-options-pane, .ewa-nov2-do-more-pane
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 13px;
+}
+.clip24x24.ewa-nov2-tp-bt-img-ct
+{
+	position: absolute;
+	right: 8px;
+	bottom: 4px;
+}
+.ewa-nov2-pickerpane
+{
+	position: absolute;
+	height: 100%;
+}
+.ewa-nov2-pickerpane-content
+{
+	position: absolute;
+	width: 106px;
+	height: 100%;
+	filter: inherit;
+}
+.ewa-nov2-pickerpane-scroll
+{
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 123px;
+	top: 66px;
+	bottom: 0px;
+	filter: inherit;
+}
+.ewa-nov2-thumbnail
+{
+	filter: inherit;
+	overflow: hidden;
+}
+.ewa-nov2-thumbnail-sel
+{
+	max-width: 102px;
+	max-height: 202px;
+	border: 2px solid #217346;
+}
+.ewa-nov2-thumbnail-unsel
+{
+	max-width: 102px;
+	max-height: 202px;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+.ewa-nov2-thumbnail-img
+{
+	max-width: 100px;
+	max-height: 200px;
+	margin: 1px;
+	overflow: hidden;
+	min-height: 17px;
+	filter: inherit;
+}
+.ewa-nov2-thumbnail-label
+{
+	font-size: 9pt;
+	font-weight: bold;
+	color: #444444;
+	padding-bottom: 15px;
+	padding-top: 3px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	filter: inherit;
+	line-height: 9px;
+}
+.ewa-nov2-thumbnail-label-text
+{
+	cursor: pointer;
+	display: inline-block;
+	line-height: 9px;
+}
+.ewa-nov2-thumbnail-img input
+{
+	filter: inherit;
+}
+DIV.ewa-nov2-ewaContainer
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ewa-nov2-focus-label
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	color: #217346;
+	font-size: 15.5pt;
+	padding-top: 4px;
+}
+.ewr-grdcontarea-ltr .ewr-sheettable div.clp .ewa-nov2-scs-parent
+{
+	right: 0;
+}
+.ewr-grdcontarea-rtl .ewr-sheettable div.clp .ewa-nov2-scs-parent
+{
+	left: 0;
+}
+.ewa-nov2-scs-parent
+{
+	position: absolute;
+	z-index: 5;
+	height: inherit;
+	width: 17px;
+}
+.ewa-nov2-scs-arrow
+{
+	position: relative;
+	display: table-cell;
+	width: inherit;
+	height: inherit;
+	text-align: center;
+	font: normal 16px 'Consolas', 'Arial', san-serif;
+}
+.ewa-nov2-scs-arrow:hover
+{
+	cursor: pointer;
+}
+iframe.ewr-nov2-slicer-container
+{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+.ewa-nov2-toolbar-adjustment
+{
+	font-family:"Microsoft Yahei UI","Microsoft Yahei","Î¢ÈíÑÅºÚ",SimSun,"ËÎÌå", sans-serif;
+	border-style:solid;
+	border-width:1px;
+	border-color:#424242;
+}
+.ewa-nov2-toolbar-dock-adjustment
+{
+	margin-top: 0px!important;
+}
+.ewa-nov2-toolbar-button-text 
+{
+	text-transform: uppercase;
+}
+.ewa-nov2-about-logo
+{
+	width: 135px;
+	height: 30px;
+	overflow: hidden;
+}
+.ewa-nov2-animation-loading-container
+{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	z-index: 200;
+}
+.ewa-nov2-animation-loading-text
+{
+	top: 50%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-family: "Microsoft Yahei UI","Microsoft Yahei","Î¢ÈíÑÅºÚ",SimSun,"ËÎÌå", sans-serif;
+	font-size: 10.5pt;
+	color: #666666;
+}
+.ewa-nov2-animation-loading-image
+{
+	vertical-align: middle;
+	padding-right: 3px;
+}
+.ewa-nov2-animation-loading-imagetext
+{
+	vertical-align: top;
+}
+.ewa-nov2-animation-hidden-div
+{
+	position: absolute;
+	height: 1000px;
+	width: 1000px;
+	left: -20000px;
+	top: -20000px;
+}
+.ewafo-slicer
+{
+	overflow: visible;
+	z-index: 50;
+}
+.ewa-fo-img-div-slicer
+{
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.ewa-nov2-noslicer-message
+{
+	font-size: 10pt;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.ewa-ee-taskpane .ewa-nov2-pickerpane-scroll.ewa-scrollbars
+{
+	scrollbar-track-color: #F0F0F0;
+}
+.ewa-nov2-toolbar-list
+{
+	list-style-type: none;
+	color: #FFFFFF;
+	font-size: 11pt;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 66px;
+	left: 13px;
+	right: 13px;
+}
+.ewa-nov2-ltr .ewa-nov2-toolbar-list
+{
+	text-align: left;
+}
+.ewa-nov2-rtl .ewa-nov2-toolbar-list
+{
+	text-align: right;
+}
+.ewa-nov2-toolbar-menu-element
+{
+	padding: 10px 2px;
+	cursor: pointer;
+}
+.usehover .ewa-nov2-toolbar-menu-element-enabled:hover
+{
+	background-color: #439467;
+}
+.ewa-nov2-toolbar-menu-element-enabled:active
+{
+	background-color: #0A6332 !important;
+}
+.ewa-nov2-toolbar-menu-element-disabled
+{
+	cursor: default;
+	color: #b1b1b1;
+}
+.ewa-nov2-toolbar-menu-icon
+{
+	display: inline-block;
+}
+.ewa-nov2-ltr .ewa-nov2-toolbar-menu-icon
+{
+	margin-right: 6px;
+}
+.ewa-nov2-rtl .ewa-nov2-toolbar-menu-icon
+{
+	margin-left: 6px;
+}
+.ewa-nov2-toolbar-menu-label
+{
+	position: relative;
+	top: -3px;
+}
+.ewa-nov2-options-link-container
+{
+	position: absolute;
+	bottom: 0;
+}
+.ewa-nov2-ltr .ewa-nov2-options-link-container
+{
+	text-align: left;
+}
+.ewa-nov2-rtl .ewa-nov2-options-link-container
+{
+	text-align: right;
+}
+.ewa-nov2-options-link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.usehover .ewa-nov2-options-link:hover
+{
+	text-decoration: underline;
+}
+.ewa-ptp-nov2
+{
+	border-left: none;
+	border-right: none;
+}
+.ewa-ptp-ltr.ewa-ptp-nov2, .ewa-flp-ltr.ewa-flp-nov2
+{
+	left: 19px;
+	right: auto;
+	bottom: 0;
+}
+.ewa-ptp-rtl.ewa-ptp-nov2, .ewa-flp-rtl.ewa-flp-nov2
+{
+	right: 19px;
+	left: auto;
+	bottom: 0;
+}
+.ewa-ptp-nov2 .ewa-ptp-title, .ewa-flp-nov2 .ewa-flp-description
+{
+	color: #666;
+	font-size: 19.5pt;
+	font-weight: lighter;
+}
+.ewa-ptp-nov2 .ewa-ptp-title
+{
+	padding: 9px 8px 6px 8px;
+}
+.ewa-flp-nov2 .ewa-flp-description
+{
+	padding: 9px 0 6px 0;
+}
+.ewa-flp-nov2 .ewa-flp-fieldmanager
+{
+	top: 52px;
+}
+.ewa-nov2-ltr .cui-QATRowLeft {
+	position:absolute;
+	top:0px;
+	margin-top:3px;
+	left:0px;
+	right:auto;
+}
+.ewa-nov2-rtl .cui-QATRowLeft {
+	position:absolute;
+	top:0px;
+	margin-top:3px;
+	left:auto;
+	right:0px;
+}
