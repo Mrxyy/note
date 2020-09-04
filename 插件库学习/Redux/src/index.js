@@ -1,41 +1,117 @@
-import { createStore } from 'redux';
+// import {
+// 	createStore,
+// 	Store,
+// 	combineReducers,
+// 	applyMiddleware,
+// 	bindActionCreators,
+// 	compose
+// } from "redux"
+// // 编写redux
+// function add(s = [],a){
+//     console.log(a.type);
+// 	if(a.type == "UI"){
+//         console.log(s,2222222222222);
+//         return a
+//     }
+//     console.log(s,44444444);
+//     return s
+// }
+// function rem(s,a){
+	
+// }
 
-/**
- * 这是一个 reducer，形式为 (state, action) => state 的纯函数。
- * 描述了 action 如何把 state 转变成下一个 state。
- *
- * state 的形式取决于你，可以是基本类型、数组、对象、
- * 甚至是 Immutable.js 生成的数据结构。惟一的要点是
- * 当 state 变化时需要返回全新的对象，而不是修改传入的参数。
- *
- * 下面例子使用 `switch` 语句和字符串来做判断，但你可以写帮助类(helper)
- * 根据不同的约定（如方法映射）来判断，只要适用你的项目即可。
- */
-function counter(state = 0, action) {
-  switch (action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
-  default:
-    return state;
-  }
+// //编写action 函数
+// function actioner(ui){
+// 	return {
+// 		type:ui,
+// 		text:123
+// 	}
+// }
+
+// //添加
+// let store =  createStore(add)
+// console.log(store.getState());
+// store.dispatch(actioner("UI"))
+// store.dispatch(actioner("U"))
+// console.log(store.getState());
+
+//TODO
+import React,{createContext} from 'react'
+import { render} from 'react-dom'
+// import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
+// console.log(React,render,Provider,createStore,document.getElementById('app'));
+// let store = createStore(todoApp)
+let cex = createContext("a")
+// let {Provider} = cex
+// console.log(store,store.getState());
+class Provider extends React.Component{
+    constructor(props){
+        super(props)
+        let t = this
+        console.log(props,74454,this.props)
+        let b = this.props.store.a
+        alert(b)
+        Object.defineProperty(this.props.store,"a",{
+            set(value){
+                console.log(a,value)
+                b = value
+                // t.props.store.a = value
+                t.forceUpdate()
+                // t.render()
+            },
+            get(){
+                // console.log(this,888)
+                return b
+            }
+        })
+    }
+    render(){
+        console.log(this.props.store.a,85)
+        return (
+            <cex.Provider value={this.props.store}> 
+                {this.props.children}
+            </cex.Provider>
+        )
+    }
 }
-
-// 创建 Redux store 来存放应用的状态。
-// API 是 { subscribe, dispatch, getState }。
-let store = createStore(counter);
-console.log(store.getState())
-// 可以手动订阅更新，也可以事件绑定到视图层。
-store.subscribe(() =>
-  console.log(store.getState())
-);
-
-// 改变内部 state 惟一方法是 dispatch 一个 action。
-// action 可以被序列化，用日记记录和储存下来，后期还可以以回放的方式执行
-store.dispatch({ type: 'INCREMENT' });
-// 1
-store.dispatch({ type: 'INCREMENT' });
-// 2
-store.dispatch({ type: 'DECREMENT' });
-// 1
+Provider.contextType = cex;
+function Al(){
+    return <button onClick = {a}>+</button>
+}
+function Lpp(props){
+    console.log(props,999)
+    return <div>
+         {props.children}
+    </div>
+}
+function a(){
+     store.a++
+     console.log(store)
+}
+// 内部触发了 fx(state.fx,action) fx1(state.fx1,action) 
+let store = {
+    a:2
+}
+console.log(store)
+render(
+    
+// provider 是框架内部创建了一个 createContext() 创建了一个context 我们把store传入
+  // <Provider store={store}>
+  //   <App />
+    
+  // </Provider>,
+  <div>
+    <Al></Al>
+    <Provider store={store}>
+        <Lpp>
+           1232
+        </Lpp>
+    </Provider>
+  </div>,
+  document.getElementById('app')
+)
+	
+console.log(store.a )
