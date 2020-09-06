@@ -1,0 +1,382 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200507.170943.15800.0.001.json",
+    "dumpEventTime": "2020-05-07T17:09:43Z",
+    "dumpEventTimeStamp": "1588842583206",
+    "processId": 15800,
+    "cwd": "C:\\Users\\xiong.yangyang\\WeChatProjects\\cloundDevelopent\\cloudfunctions\\getDoubanBook",
+    "commandLine": [
+      "C:\\Users\\xiong.yangyang\\Documents\\node-v12.10.0-win-x64\\node.exe",
+      "index.js"
+    ],
+    "nodejsVersion": "v12.10.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.10.0",
+      "v8": "7.6.303.29-node.16",
+      "uv": "1.31.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.10.0/node-v12.10.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.10.0/node-v12.10.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.10.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 1282281,
+        "nice": 0,
+        "sys": 1258203,
+        "idle": 25953140,
+        "irq": 531250
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 2207140,
+        "nice": 0,
+        "sys": 951437,
+        "idle": 25335046,
+        "irq": 21125
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 1811531,
+        "nice": 0,
+        "sys": 601843,
+        "idle": 26080250,
+        "irq": 18078
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 1641328,
+        "nice": 0,
+        "sys": 567656,
+        "idle": 26284390,
+        "irq": 16937
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 1564000,
+        "nice": 0,
+        "sys": 507015,
+        "idle": 26422359,
+        "irq": 16671
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "speed": 2904,
+        "user": 1624687,
+        "nice": 0,
+        "sys": 542171,
+        "idle": 26326515,
+        "irq": 17875
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "以太网",
+        "internal": false,
+        "mac": "e0:d5:5e:ad:b5:4d",
+        "address": "fe80::903d:3a53:964f:fa9d",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 13
+      },
+      {
+        "name": "以太网",
+        "internal": false,
+        "mac": "e0:d5:5e:ad:b5:4d",
+        "address": "10.80.52.201",
+        "netmask": "255.255.254.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "whjr-ws-52201a"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff7fcce6eb9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff7fcceb24c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28172"
+    },
+    {
+      "pc": "0x00007ff7fccea1f8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+23992"
+    },
+    {
+      "pc": "0x00007ff7fcdd63cb",
+      "symbol": "v8::base::CPU::has_sse+37563"
+    },
+    {
+      "pc": "0x00007ff7fd5c976e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff7fd5b1711",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff7fd47f1cc",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff7fd49339d",
+      "symbol": "v8::internal::Factory::AllocateRawFixedArray+61"
+    },
+    {
+      "pc": "0x00007ff7fd49aa1c",
+      "symbol": "v8::internal::Factory::NewFixedArrayWithFiller+44"
+    },
+    {
+      "pc": "0x00007ff7fd49a9e1",
+      "symbol": "v8::internal::Factory::NewUninitializedFixedArray+65"
+    },
+    {
+      "pc": "0x00007ff7fd37bb4a",
+      "symbol": "v8::Message::GetIsolate+7466"
+    },
+    {
+      "pc": "0x00007ff7fd2314c0",
+      "symbol": "v8::internal::OrderedHashMap::ValueAt+61376"
+    },
+    {
+      "pc": "0x00007ff7fd9e300d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+575565"
+    },
+    {
+      "pc": "0x000003ff14fad4d0",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 948944896,
+    "totalCommittedMemory": 948944896,
+    "usedMemory": 917215296,
+    "availableMemory": 1277662344,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261832,
+        "used": 31432,
+        "available": 230400
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16757248,
+        "used": 4952952,
+        "available": 11804296
+      },
+      "old_space": {
+        "memorySize": 10072064,
+        "committedMemory": 10072064,
+        "capacity": 7647272,
+        "used": 7647272,
+        "available": 0
+      },
+      "code_space": {
+        "memorySize": 425984,
+        "committedMemory": 425984,
+        "capacity": 290080,
+        "used": 290080,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 790528,
+        "committedMemory": 790528,
+        "capacity": 512880,
+        "used": 512880,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 903790592,
+        "committedMemory": 903790592,
+        "capacity": 903777224,
+        "used": 903777224,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3456,
+        "used": 3456,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16757248,
+        "used": 0,
+        "available": 16757248
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 7.343,
+    "kernelCpuSeconds": 0.859,
+    "cpuConsumptionPercent": 102.525,
+    "maxRss": 1575485440,
+    "pageFaults": {
+      "IORequired": 689818,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 470,
+      "writes": 6
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\xiong.yangyang\\AppData\\Roaming",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_1788_FFNBEHYNJVNGFNXF",
+    "CHROME_RESTART": "Google Chrome|哎呀！Google Chrome 浏览器崩溃了。是否立即重新启动？|LEFT_TO_RIGHT",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "WHJR-WS-52201A",
+    "ComSpec": "C:\\windows\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\xiong.yangyang",
+    "LOCALAPPDATA": "C:\\Users\\xiong.yangyang\\AppData\\Local",
+    "LOGONSERVER": "\\\\WHJR-DC-01",
+    "NUMBER_OF_PROCESSORS": "6",
+    "OS": "Windows_NT",
+    "Path": "C:\\Program Files (x86)\\Google\\Chrome\\Application;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Users\\xiong.yangyang\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\xiong.yangyang\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;E:\\Git\\cmd;C:\\Users\\xiong.yangyang\\Documents\\node-v12.10.0-win-x64;C:\\Users\\xiong.yangyang\\Documents\\node-v12.14.0-win-x64;",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e0d",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Users\\xiong.yangyang\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\windows",
+    "TEMP": "C:\\Users\\XIONG~1.YAN\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\XIONG~1.YAN\\AppData\\Local\\Temp",
+    "USERDNSDOMAIN": "YU1.51JOB.COM",
+    "USERDOMAIN": "YU1",
+    "USERDOMAIN_ROAMINGPROFILE": "YU1",
+    "USERNAME": "xiong.yangyang",
+    "USERPROFILE": "C:\\Users\\xiong.yangyang",
+    "windir": "C:\\windows",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.44.2",
+    "LANG": "zh_CN.UTF-8",
+    "COLORTERM": "truecolor"
+  },
+  "sharedObjects": [
+    "C:\\Users\\xiong.yangyang\\Documents\\node-v12.10.0-win-x64\\node.exe",
+    "C:\\windows\\SYSTEM32\\ntdll.dll",
+    "C:\\windows\\System32\\KERNEL32.DLL",
+    "C:\\windows\\System32\\KERNELBASE.dll",
+    "C:\\windows\\System32\\WS2_32.dll",
+    "C:\\windows\\System32\\RPCRT4.dll",
+    "C:\\windows\\System32\\ADVAPI32.dll",
+    "C:\\windows\\System32\\msvcrt.dll",
+    "C:\\windows\\System32\\sechost.dll",
+    "C:\\windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\windows\\System32\\ucrtbase.dll",
+    "C:\\windows\\System32\\USER32.dll",
+    "C:\\windows\\System32\\win32u.dll",
+    "C:\\windows\\System32\\GDI32.dll",
+    "C:\\windows\\System32\\gdi32full.dll",
+    "C:\\windows\\System32\\msvcp_win.dll",
+    "C:\\windows\\System32\\PSAPI.DLL",
+    "C:\\windows\\System32\\CRYPT32.dll",
+    "C:\\windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\windows\\System32\\MSASN1.dll",
+    "C:\\windows\\SYSTEM32\\USERENV.dll",
+    "C:\\windows\\System32\\bcrypt.dll",
+    "C:\\windows\\System32\\profapi.dll",
+    "C:\\windows\\SYSTEM32\\WINMM.dll",
+    "C:\\windows\\SYSTEM32\\winmmbase.dll",
+    "C:\\windows\\System32\\cfgmgr32.dll",
+    "C:\\windows\\System32\\bcryptPrimitives.dll",
+    "C:\\windows\\System32\\IMM32.DLL",
+    "C:\\windows\\System32\\powrprof.dll",
+    "C:\\windows\\System32\\UMPDC.dll",
+    "C:\\windows\\system32\\uxtheme.dll",
+    "C:\\windows\\System32\\combase.dll",
+    "C:\\windows\\system32\\mswsock.dll",
+    "C:\\windows\\System32\\kernel.appcore.dll",
+    "C:\\windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\windows\\System32\\NSI.dll",
+    "C:\\windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\windows\\System32\\fwpuclnt.dll",
+    "C:\\windows\\system32\\napinsp.dll",
+    "C:\\windows\\system32\\pnrpnsp.dll",
+    "C:\\windows\\System32\\winrnr.dll",
+    "C:\\windows\\system32\\NLAapi.dll",
+    "C:\\windows\\system32\\wshbth.dll"
+  ]
+}

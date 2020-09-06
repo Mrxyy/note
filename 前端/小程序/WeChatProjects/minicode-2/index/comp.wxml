@@ -1,0 +1,2 @@
+<!--index/comp.wxml-->
+<text>自定义组件 wx://component-export 测试</text>

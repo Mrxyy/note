@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2fbc36bc-97ee-4e96-9a74-67c7f232e081" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/../../TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../插件库学习/Redux/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../插件库学习/Redux/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tomcat.md" beforeDir="false" afterPath="$PROJECT_DIR$/Tomcat.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1h3FxwQsVA2SAuO0FuZsOWkDQbe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 8.5.57" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.57" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="Apache:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Apache_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Apache:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fbc36bc-97ee-4e96-9a74-67c7f232e081" name="默认的" comment="" />
+      <created>1599232118689</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599232118689</updated>
+      <workItem from="1599232123023" duration="159000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="325" y="206" key="FileChooserDialogImpl" timestamp="1599232274839">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="325" y="206" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599232274839" />
+    <state x="0" y="13" key="new project wizard" timestamp="1599232279767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="13" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1599232279767" />
+  </component>
+</project>

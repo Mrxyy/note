@@ -1,5 +1,18 @@
 ## [Tomcat9.0的配置](https://www.cnblogs.com/gaohw33/p/11498712.html)
-
+## [Tomcat9.0的配置](https://blog.csdn.net/qq_35661171/article/details/79165535)
+![虚拟路径配置](虚拟路径配置.png)
+|目录	|作用	|
+|--	|--	|
+|	bin|	命令文件|
+|	conf|	配置文件|
+|	logs|	日志文件|
+|	temp|	临时文件|
+|	webapps|	项目目录|
+|	work|	运行内存|
++ 启动
+	1. windows startup.bat
+	2. 会依赖 JAVA_HOME这个环境变量
+	3. netstat -ano
 + 定义路由(虚拟目录)
 	- 1.重启服务器，bin\server.bat\host下Context docpath="指向目录" path="路由名称" 
 	 ```<Context docBase="C:\work\jstore\web" path="/jstore" reloadable="true"/>```

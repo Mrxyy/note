@@ -1,0 +1,9 @@
+<view class="Myself">
+    <view class="usericon">
+        <image src="{{myInfo?myInfo.avatarUrl:'../../images/tabIcon/mycen.png'}}" />
+    </view>
+    <button wx:if="{{!myInfo}}" bindgetuserinfo="getUserInfo" open-type="getUserInfo"  type="" size="defaultSize"   hover-class="defaultTap">登录</button>
+    <view wx:if="{{myInfo.openId}}" class="tool">
+        <button type="warn" size="defaultSize" bindtap="scancode" hover-class="defaultTap">添加图书</button>
+    </view>
+</view>

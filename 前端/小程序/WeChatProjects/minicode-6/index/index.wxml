@@ -1,0 +1,112 @@
+<page-meta
+  background-text-style="{{bgTextStyle}}"
+  background-color="{{bgColor}}"
+  background-color-top="{{bgColorTop}}"
+  background-color-bottom="{{bgColorBottom}}"
+  scroll-top="{{scrollTop}}"
+  scroll-duration="1000"
+  page-style="color: green"
+  bindscroll="pageScroll"
+  bindresize="pageResize"
+  bindscrolldone="pageScrollDone"
+>
+  <navigation-bar
+    title="{{nbTitle}}"
+    loading="{{nbLoading}}"
+    front-color="{{nbFrontColor}}"
+    background-color="{{nbBackgroundColor}}"
+    color-animation-duration="2000"
+    color-animation-timing-func="easeIn"
+  />
+</page-meta>
+
+<view>以下是页面正文</view>
+
+<navigator url="./new">
+  <button>跳另一个页面</button>
+</navigator>
+<button bindtap="scrollTo100">点击跳到 200rpx 处</button>
+<view class="intro">
+  <text>
+    启动 5s 后会尝试改变页面样式
+    这个页面文字是绿色的，而且要长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+    长
+  </text>
+</view>

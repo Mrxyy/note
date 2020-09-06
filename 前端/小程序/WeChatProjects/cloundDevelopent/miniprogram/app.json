@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/test/test1/index",
+    "project/home/index",
+    "project/Myself/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发测试项目",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "project/home/index",
+      "text": "首页",
+      "iconPath": "images/tabIcon/home.png",
+      "selectedIconPath": "images/tabIcon/homeSel.png"
+    },{
+      "pagePath": "project/Myself/index",
+      "text": "个人中心",
+      "iconPath": "images/tabIcon/mycen.png",
+      "selectedIconPath": "images\\tabIcon\\mycenSle.png"
+    }
+   ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

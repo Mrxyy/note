@@ -27,6 +27,7 @@ function counter(state = 0, action) {
 let store = createStore(counter);
 console.log(store.getState())
 // 可以手动订阅更新，也可以事件绑定到视图层。
+
 store.subscribe(() =>
   console.log(store.getState())
 );
