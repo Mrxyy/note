@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>级联控件</title>
+        <link rel="stylesheet" href="./ZdCascader.css" type="text/css">
+    </head>
+
+    <body>
+        <div>
+            <h3>请点击下方输入框选择</h3>
+            <input type="text" id="test" />
+        </div>
+        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <script src="./ZdCascader.js"></script>
+        <script>
+            var _data = [{
+                "value": 1,
+                "label": "建设部",
+                "children": [{
+                    "value": 3,
+                    "label": "建设",
+                    "children": [{
+                        "value": 4,
+                        "label": "保电",
+                        "children": []
+                    }, {
+                        "value": 8,
+                        "label": "建设一班",
+                        "children": []
+                    }, {
+                        "value": 17,
+                        "label": "保电一班",
+                        "children": []
+                    }, {
+                        "value": 48,
+                        "label": "建设部",
+                        "children": []
+                    }, {
+                        "value": 49,
+                        "label": "咯空",
+                        "children": []
+                    }]
+                }, {
+                    "value": 45,
+                    "label": "明天周五",
+                    "children": []
+                }]
+            }, {
+                "value": 2,
+                "label": "运检部",
+                "children": [{
+                    "value": 6,
+                    "label": "变电运维",
+                    "children": [{
+                        "value": 10,
+                        "label": "保电一班",
+                        "children": []
+                    }, {
+                        "value": 13,
+                        "label": "报修二班",
+                        "children": []
+                    }, {
+                        "value": 14,
+                        "label": "运维一班",
+                        "children": []
+                    }, {
+                        "value": 15,
+                        "label": "运维二班",
+                        "children": []
+                    }]
+                }, {
+                    "value": 7,
+                    "label": "保电",
+                    "children": [{
+                        "value": 9,
+                        "label": "建设二班",
+                        "children": []
+                    }, {
+                        "value": 11,
+                        "label": "保电二班",
+                        "children": []
+                    }, {
+                        "value": 16,
+                        "label": "运检-保电三班",
+                        "children": []
+                    }]
+                }]
+            }, {
+                "value": 43,
+                "label": "舌尖部",
+                "children": [{
+                    "value": 5,
+                    "label": "变电报修",
+                    "children": [{
+                        "value": 12,
+                        "label": "报修一班",
+                        "children": []
+                    }]
+                }, {
+                    "value": 50,
+                    "label": "超级电焊",
+                    "children": []
+                }]
+            }]
+            $(function() {
+                $('#test').zdCascader({
+                    data: _data,
+                    onChange: function(data1, data2, data3) {
+                        console.log(data1, data2, data3)
+                    }
+                });
+            })
+        </script>
+    </body>
+</html>

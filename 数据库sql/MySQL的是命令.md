@@ -3,6 +3,11 @@
 + mysqld 会判别是否已经安装(bin目录或者path里面配置)、mysqld --install [命名]
 + net start/stop MySQL(Mysql软件对应的服务名称)
 
++ 安装mysql时候遇到的问题：
+    1.解压版出现路径找不到问题：[解决方法](https://www.oschina.net/question/727667_121198)
+    2.打开服务时出现错误：[解决方法](https://www.cnblogs.com/jianz/p/6756771.html)
+    3.本地连接MySQL时候出现不能连接:[解决方法](https://www.cnblogs.com/cx-code/p/9287274.html)
+
 ## 以下是关于mysql数据库管理系统的的一些命令
 
 + mysql 进入Mysql
