@@ -7,11 +7,12 @@
     1.解压版出现路径找不到问题：[解决方法](https://www.oschina.net/question/727667_121198)
     2.打开服务时出现错误：[解决方法](https://www.cnblogs.com/jianz/p/6756771.html)
     3.本地连接MySQL时候出现不能连接:[解决方法](https://www.cnblogs.com/cx-code/p/9287274.html)
+    4.mac上端口为0:[解决方法](https://blog.csdn.net/lixingqiao01/article/details/50956849)
 
 ## 以下是关于mysql数据库管理系统的的一些命令
 
 + mysql 进入Mysql
-+ show mysql 展示系统中的数据库
++ show databases 展示系统中的数据库
 + creat database 【库名】 创建一个库
 + use 【库名】 连接一个库
 + show tables 展示库中的表
