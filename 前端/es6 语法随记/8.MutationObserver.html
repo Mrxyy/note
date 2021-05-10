@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="text/javascript">
+			// MutationObserver 监听Dom变化
+			const	app = document.querySelector("#app");
+			setTimeout(()=>console.log("定时器"));
+			const mutationObserver = new MutationObserver(()=>{console.log('发布')});
+			mutationObserver.observe(app,{subtree: true, childList: true,attributes: true});
+			app.textContent = "hello world";
+			app.setAttribute("a","a");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>博客 Blog</title>
+        <link>http://yangX-blog:8080/</link>
+        <description>博客 Blog</description>
+        <lastBuildDate>Thu, 25 Mar 2021 02:20:24 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[http中的缓存]]></title>
+            <link>http://yangX-blog:8080/yangX-blog/en/http中的缓存</link>
+            <guid>http中的缓存</guid>
+            <pubDate>Thu, 25 Mar 2021 02:20:24 GMT</pubDate>
+            <description><![CDATA[强缓存]]></description>
+        </item>
+        <item>
+            <title><![CDATA[感谢！]]></title>
+            <link>http://yangX-blog:8080/yangX-blog/en/thank-you</link>
+            <guid>感谢！</guid>
+            <pubDate>Sat, 20 Mar 2021 14:25:52 GMT</pubDate>
+            <description><![CDATA[非常感谢您的关注 🙏！]]></description>
+        </item>
+    </channel>
+</rss>

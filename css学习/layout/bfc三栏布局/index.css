@@ -1,0 +1,16 @@
+.praent {
+  width: 100%;
+  height: 500px; }
+  .praent > div {
+    height: 100%;
+    overflow: hidden; }
+  .praent .l {
+    width: 10%;
+    background: #ebd8b2;
+    float: left; }
+  .praent .c {
+    float: right;
+    width: 20%;
+    background: #cb9164; }
+  .praent .r {
+    background: #dba6ac; }

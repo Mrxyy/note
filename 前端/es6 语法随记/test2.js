@@ -1,3 +1,9 @@
+console.log(document.getElementsByTagName("h1"))
+ console.log(i)
+ while(i<=1000){
+				console.log(10000)
+				i++
+}
 console.log("test2")
 // console.log("ok2")
 // i = 0

@@ -1,0 +1,20 @@
+@function randomColor() {
+    @return rgb(random(255), random(255), random(255));
+}
+.column{
+		column-count: 3;
+		column-gap: 5px;
+		height: 1000px;
+		>div{
+			width: 100%;
+			height: #{random(200)}px;
+			background-color: green;
+			break-inside: avoid;
+		}
+		@for $var from 1 to 5 {
+			.a#{$var}{
+				height: #{random(200)}px;
+				background: randomColor();
+			}
+		}
+}

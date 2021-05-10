@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.CSS-Containment{
+				height: 100px;
+			}
+			.visibility{
+				contain:layout;
+				width: 100px;
+				height: 1500px;
+				/* layout：元素bfc/size：子元素不能改变宽高/paint：超出直接隐藏; */
+			}
+			.content-visibility{
+				height: 40px;
+				content-visibility: hidden;
+				/* 到可视区才render */
+				 contain-intrinsic-size: 4000px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="CSS-Containment">CSS Containment</h1>
+		<h2 class="visibility" id="test">visibility</h2>
+		<h2 class="content-visibility">content-visibility</h2>
+		<script>
+			setTimeout(()=>{
+				test.append("1111111111111111111111111111111111111111111111111111111111111111111111111111111")
+				test.append("1111111111111111111111111111111111111111111111111111111111111111111111111111111")
+			},1000)
+		</script>
+	</body>
+</html>

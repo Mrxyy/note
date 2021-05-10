@@ -1,0 +1,212 @@
+// $color:green;
+// @keyframes runing{
+// 			0%{
+// 				height: 20px;
+// 				width: 30px;
+// 				border-bottom:none ;
+// 				border-right:none ;
+// 			}
+// 			10%{
+// 				left: 0px;
+// 				border-bottom:none ;
+// 				border-right:none ; 
+// 				height: 0px;
+// 				width: 50px;
+// 			}
+// 			40%{
+// 				border-bottom:none ;
+// 				border-right:none ;
+// 				height: 10px;
+// 				border-bottom:none ;
+// 				border-left:none ;
+// 				width: 50px;
+// 				left: 50px;
+// 				top: 0px;
+// 			}
+// 			55%{
+// 				border-left:none ;
+// 				border-top:2px solid red  ;
+// 				border-bottom:none ;
+// 				border-right:2px solid red ;
+// 				height: 30px;
+// 				width: 20px;
+// 				left:80px;
+// 				top: 0px;
+// 			}
+// 			70%{
+// 				border-left:none ;
+// 				border-top:none ;
+// 				border-right:none ;
+// 				border-bottom:2px solid red ;
+// 				height: 30px;
+// 				width: 50px;
+// 				left:50px;
+// 				top: 0px;
+// 			}
+// 			90%{
+// 				border-left:none ;
+// 				border-top:none ;
+// 				border-bottom:2px solid red ;
+// 				border-right:none ;
+// 				top: 30px;
+// 				height: 0;
+// 				width: 50px;
+// 				left:0px;
+// 			}
+// 			100%{
+// 				border-left:2px solid red ;
+// 				border-top:none ;
+// 				border-bottom:2px solid red ;
+// 				border-right:none ;
+// 				height: 10px;
+// 				width: 40px;
+// 				left:0px;
+// 				top: 20px;
+// 			}
+// }
+// .btn{
+// 	display: inline-block;
+// 	width: 100px;
+// 	line-height: 30px;
+// 	height: 30px;
+// 	text-align: center;
+// 	background: $color;
+// 	border-radius: 4px;
+// 	color: #fff;
+// 	position: relative;
+// 	overflow: hidden;
+// 	padding: 2px;
+// 	box-sizing: border-box;
+// 	&::before{
+// 		box-sizing: border-box;
+// 		content: "";
+// 		border-radius: 4px 0 0 0;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		border:2px solid yellow ;
+// 		display: block;
+// 		height: 20px;
+// 		width: 30px; 
+// 		animation: 2s runing infinite linear;
+// 		border-bottom:none ;
+// 		border-right:none ;
+// 	}
+// }
+$color:green;
+.btn{
+	@keyframes runing{
+				to{
+					transform: rotate(360deg);
+				}
+	}
+	margin: 50px;
+	display: inline-block;
+	width: 100px;
+	line-height: 96px;
+	height: 100px;
+	text-align: center;
+	// background: $color;
+	border-radius: 10px;
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+	// padding: 4px;
+	box-sizing: border-box;
+	&::before{
+		box-sizing: border-box;
+		content: "";
+		border-radius: 4px 0 0 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background: red;
+		display: block;
+		height:100%;
+		width: 100%; 
+		transform-origin: 0 0;
+		animation: 2s runing infinite linear;
+		border-radius: 50px;
+		z-index: -2;
+	}
+	&:after{
+		box-sizing: border-box;
+		content: "";
+		border-radius: 4px 0 0 0;
+		position: absolute;
+		top: 4px;
+		border-radius: 4px;
+		left: 4px;
+		background: $color;
+		display: block;
+		height: 92px;
+		transform-origin: 0 0;
+		width: 92px; 
+		z-index: -1;
+		// animation: 2s runing infinite linear;
+		// animation: 20s runing infinite linear;
+	}
+}
+.run{ 
+	 @keyframes shine {
+	         from {
+	         }
+	         to {
+	             // 比如第一个表示0 -12px在动画中表示左边框一秒内上移12px,视觉上就形成了向上滑动的效果
+	             background-position: 0 -12px, 100% 12px, 12px 0, -12px 100%;
+	         }
+	     }  
+        width:400px;
+        height: 100px;
+        margin: 20px auto;
+        // 用来表现四个边框样式的背景设置
+        background: linear-gradient(0deg, transparent 50%, orange 50%) repeat-y,  // 左边框
+            linear-gradient(0deg, transparent 50%, orange 50%) repeat-y,  // 右边框
+            linear-gradient(90deg, transparent 50%, orange 50%) repeat-x, // 上边框
+            linear-gradient(90deg, transparent 50%, orange 50%) repeat-x; // 下边框
+
+        // 分别对应上面四个背景的size，比如第一个1px 12px表示左边框背景填充宽1px,高12px;
+        // 此处的高指的是是一个透明横线+一个有颜色横线的高，并不是指整体高度，可理解为线段的密度
+        // 左边框的高度是由多个12px的高度线段构成的
+        background-size: 1px 12px, 1px 12px, 12px 1px, 12px 1px; 
+
+        // 分别对应上面四个背景的position，比如第一个0 0表示边框位于容器x轴原点、y轴原点;                                                              
+        background-position: 0 0, 100% 0, 0 0, 0 100%;
+        animation: shine 1s infinite linear;          
+    }
+		
+.box {
+	@keyframes borderAround {
+	    0%, 100% { clip: rect(0 148px 2px 0); }
+	    25% { clip: rect(0 148px 120px 146px); }
+	    50% { clip: rect(118px 148px 120px 0); }
+	    75% { clip: rect(0 2px 120px 0); }
+	}
+		    display: inline-block;
+		    padding: 10px;
+		    position: relative;
+				&::before {
+				    content: '';
+				    position: absolute;
+				    left: 0; top: 0; right: 0; bottom: 0;
+				    border: 2px solid #cd0000;
+				    animation: borderAround 1.5s infinite linear;  
+						// clip:rect(118px 148px 120px 0)
+				}
+}
+.box1{
+    width: 200px;
+    background: repeating-linear-gradient(135deg, transparent, transparent 3px, #000 3px, #000 8px);
+    animation: shine1 1s infinite linear;
+    overflow: hidden;
+		.content {
+		    height: 128px;
+		    margin: 1px; padding: 10px;
+		    background-color: #fff;    
+		}
+		@keyframes shine1 {
+		    0% { background-position: -1px -1px;}
+		    100% { background-position: -12px -12px;}
+		}
+}
+		

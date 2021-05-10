@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  height: 1000px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start; }
+  .flex > div {
+    width: 33%;
+    height: 90px;
+    background-color: green; }
+  .flex .a1 {
+    height: 123px;
+    background: #c506a4; }
+  .flex .a2 {
+    height: 51px;
+    background: #53c2a3; }
+  .flex .a3 {
+    height: 9px;
+    background: #f02283; }
+  .flex .a4 {
+    height: 25px;
+    background: #f7adef; }

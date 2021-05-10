@@ -1,4 +1,4 @@
-package cn.yang;
+package cn.yang.recursion;
 
 /**
  * @descript:递归

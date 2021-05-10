@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const ws = new WebSocket("ws://localhost:6080");
+    ws.onmessage = function (mes) {
+        console.log(mes);
+    };
+    ws.onopen = function (prames) {
+        console.log(prames);
+        ws.send("start");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<custom-xyy img="./jj.png" text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card."></custom-xyy>
+		<script>
+			//custom elements
+			// CustomElementRegistry.define()
+			// 定义一个新的自定义元素。
+			// CustomElementRegistry.get()
+			// 返回指定自定义元素的构造函数，如果未定义自定义元素，则返回undefined。
+			// CustomElementRegistry.upgrade()
+			// 直接升级自定义元素，甚至在它连接到其影子根之前。.
+			// CustomElementRegistry.whenDefined()
+			// 返回当使用给定名称定义自定义元素时将会执行的 promise。（如果已经定义了这样一个自定义元素，那么立即执行返回的 promise。）
+			class Yangx extends HTMLElement{
+				constructor(arg) {
+				    super();
+						console.dir(this);
+						let shadow = this.attachShadow({mode:'open'});
+						// 创建 span
+						var wrapper = document.createElement('span');
+						wrapper.setAttribute('class','wrapper');
+						var icon = document.createElement('span');
+						icon.setAttribute('class','icon');
+						icon.setAttribute('tabindex', 0);
+						var info = document.createElement('span');
+						info.setAttribute('class','info');
+						
+						// 获取属性的内容并将内容添加到 info 元素内
+						var text = this.getAttribute('text');
+						info.textContent = text;
+						
+						// 插入 icon
+						var imgUrl;
+						if(this.hasAttribute('img')) {
+						  imgUrl = this.getAttribute('img');
+						} else {
+						  imgUrl = './default.png';
+						}
+						var img = document.createElement('img');
+						img.src = imgUrl;
+						icon.appendChild(img);
+						// 为 shadow DOM 添加一些 CSS 样式
+						var style = document.createElement('style');
+						
+						style.textContent = `
+						.wrapper {
+						  position: relative;
+						}
+						
+						.info {
+						  font-size: 0.8rem;
+						  width: 200px;
+						  display: inline-block;
+						  border: 1px solid black;
+						  padding: 10px;
+						  background: white;
+						  border-radius: 10px;
+						  opacity: 0;
+						  transition: 0.6s all;
+						  position: absolute;
+						  bottom: 20px;
+						  left: 10px;
+						  z-index: 3;
+						}
+						
+						img {
+						  width: 1.2rem;
+						}
+						
+						.icon:hover + .info, .icon:focus + .info {
+						  opacity: 1;
+						}`;
+						shadow.appendChild(style);
+						shadow.appendChild(wrapper);
+						wrapper.appendChild(icon);
+						wrapper.appendChild(info);
+						
+				}
+			}
+			window.customElements.define("custom-xyy",Yangx);// el name,shix
+		</script>
+	</body>
+</html>

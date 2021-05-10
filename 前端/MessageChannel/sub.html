@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id='message'></div>
+
+<script>
+var port;
+var eleBox = document.querySelector("#message");
+var channel = new MessageChannel();
+window.addEventListener('load', function(e) {
+    //向父窗口发送消息，
+    window.parent.postMessage('发送页加载完毕', '*',[channel.port2]);
+    /* channel.port1.addEventListener('message', function(e){
+        eleBox.innerHTML='通道获取的消息为：'+e.data;
+    }, false); */
+    console.log(channel);
+    channel.port1.onmessage = function(e){
+        eleBox.innerHTML='通道获取的消息为：'+e.data;
+    }
+    channel.port1.start();
+} ,false);
+
+</script>
+</body>
+</html>

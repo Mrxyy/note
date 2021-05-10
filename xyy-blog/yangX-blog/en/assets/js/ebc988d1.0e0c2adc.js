@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{90:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"http\u4e2d\u7684\u7f13\u5b58","permalink":"/yangX-blog/en/http\u4e2d\u7684\u7f13\u5b58"},{"title":"\u611f\u8c22\uff01","permalink":"/yangX-blog/en/thank-you"}]}')}}]);

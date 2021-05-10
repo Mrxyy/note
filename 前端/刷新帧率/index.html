@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="test">test</h1>
+    <script>
+        //会堵下一帧的render
+        
+        var {port1,port2} = new MessageChannel();
+        port1.onmessage = (data)=>{
+            document.body.style.background="white"
+            // debugger
+            console.log(11);
+            var now = 1
+            while(now<10000000000){
+                now++
+            }
+            console.log(data);
+        }
+        window.onload =  function(){
+            window.requestAnimationFrame((t)=>{
+                document.body.style.background="red"
+                setTimeout(()=>{
+                    console.log(11);
+                })
+                port2.postMessage("post")
+            })
+            requestIdleCallback((t)=>{
+                    console.log(22);
+            })
+        }
+    </script>
+</body>
+</html>

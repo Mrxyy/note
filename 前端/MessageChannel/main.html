@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+<input type='text' id='sr'>
+<button type='button' id='submit'>提交</button>
+</form>
+<div id='message'></div>
+<!-- <iframe src='./sub.html'></iframe> -->
+<script>
+//通道通信
+var port;
+var ifr = document.querySelector('iframe');
+var eleBox = document.querySelector("#message");
+
+
+var submit = document.querySelector("#submit");
+submit.onclick=function(){
+    var srinput = document.querySelector("#sr");
+    console.log(port);
+    //window.frames[0].postMessage(srinput.value, '*');
+    port.postMessage(srinput.value);//iframe加载后向本页面父窗口发送消息，从e中获取通道端口信息，然后可以通过此port向iframe窗口中发送消息
+}
+
+window.addEventListener("message", function(e){
+    eleBox.innerHTML = '接受到的信息是：' + e.data;
+    if(e.ports && e.ports.length){
+        port=e.ports[0];
+    }
+}, false);
+
+//跨文档通信
+/*var eleBox = document.querySelector("#message");
+
+var submit = document.querySelector("#submit");
+submit.onclick=function(){
+    var srinput = document.querySelector("#sr");
+    postMessage(srinput.value, '*');
+}
+
+window.addEventListener("message", function(e){
+     eleBox.innerHTML = '接受到的信息是：' + e.data;
+}, false);*/
+
+</script>
+</body>
+</html>

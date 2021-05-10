@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- // 两边固定，中间auto--> 
+		<!-- // 思路：中间width 100%，padding = sider div witdh -->
+		<style type="text/css">
+			html,body,.p{
+				padding: 0;
+				margin: 0;
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				/* flex-wrap: wrap; */
+			}
+			.p div{
+				position: relative;
+				height: 100%;
+				/* width: 100%; */
+				/* float: left; */
+			}
+			.l{
+				width: 200px !important;
+				/* max-width: 200px; */
+				/* min-width: 200px; */
+				z-index: 1;
+				/* flex-basis: 100px; */
+				background: red;
+				flex-shrink: 0;
+			}
+			
+			.c{
+				flex: auto !important;
+				/* width:200px; */
+				background: #000000;
+				/* margin-left: -200px; */
+				/* position: absolute !important; */
+			}
+			.r{
+				width: 200px !important;
+				/* max-width:200px; */
+				/* min-width: 200px; */
+				background: salmon;
+				flex-shrink: 0;
+				/* margin-left: -200px; */
+			}
+		</style>
+		<div class="p">
+			<div class="l"></div>
+			<div class="c"></div>
+			<div class="r"></div>
+		</div>
+	</body>
+</html>

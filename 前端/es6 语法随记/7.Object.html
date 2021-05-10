@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript"> 
+			// 属性描述符:
+			// 1.数据描述符 velue writeable
+			// 2.存取描述符 set get
+			// 3.可选描述符 config enumer
+			// seal 阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要原来是可写的就可以改变。
+			var a = {a:1};
+			Object.seal(a);
+		 //  Object.defineProperty(a,"a",{
+			// 	get () {
+			// 		return 5
+			// 	}
+			// }); // 报错
+			a.b = 1;
+			a.a = 2;
+			console.log(a);
+			//prenevtExentsions 方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。
+			var a1 = {a:1};
+			Object.preventExtensions(a1);
+			a1.b = 1;
+			a1.a = 2;
+			console.log(a1);
+			// freeze 冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。
+			var a2 = { 
+				get a(){return 1; },
+				b:[]
+			};
+			Object.freeze(a2);
+			a2.b = 1;
+			a2.b.push(1); // no error
+			a2.c = 2;
+			console.log(a2);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+.columnHeight-1 {
+  width: 100%;
+  display: flex; }
+  .columnHeight-1 .r {
+    width: 100%; }
+    .columnHeight-1 .r .span {
+      height: 29px;
+      background: #f0c596;
+      border-bottom: 1px red solid; }
+  .columnHeight-1 .l {
+    width: 100px;
+    background: black; }
+
+.columnHeight-2 {
+  width: 100%;
+  display: block;
+  position: relative; }
+  .columnHeight-2 .r {
+    width: 100%; }
+    .columnHeight-2 .r .span {
+      height: 11px;
+      background: #ebdd0a;
+      border-bottom: 1px red solid; }
+  .columnHeight-2 .l {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background: black; }
+
+.columnHeight {
+  width: 100%;
+  display: table;
+  overflow: hidden; }
+  .columnHeight .r {
+    width: 100%;
+    display: table-cell; }
+    .columnHeight .r .span {
+      height: 11px;
+      background: #724235;
+      border-bottom: 1px red solid; }
+  .columnHeight .l {
+    background: red;
+    display: table-cell;
+    width: 100px;
+    vertical-align: middle; }

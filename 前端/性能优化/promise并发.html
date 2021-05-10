@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<script>
+	        var a = new Promise((resolve) => { setTimeout(resolve, 100, 0) })
+	        var b = new Promise((resolve) => { setTimeout(resolve, 100, 1) })
+	        var arr = [a, b];
+	        function asyncGenerator(time) {
+	            return new Promise((resolve) => { setTimeout(resolve, 100, time) })
+	        }
+	        var t = 2
+	        var chainCallback = () => {
+	            Promise.race(arr).then((v) => {
+	                console.log(v, arr);
+	                arr[v] = asyncGenerator(t);
+	                t++;
+	                return t < 5 ? chainCallback() : t;
+	            })
+	        }
+	        chainCallback()
+	    </script>
+</body>
+</html>	

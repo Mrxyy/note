@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript"
+			src="test2.js"
+			 async="async" 
+			></script>
+		<h1>42</h1>
+		<h1>18888</h1>
+		<img src="https://dss2.bdstatic.com/6Ot1bjeh1BF3odCf/it/u=1376776410,1887132790&fm=218&app=92&f=JPEG?w=121&h=75&s=C950A51B199FD4CA4CD508CB030010B1" alt="">
+		<script defer="defer" src="test3.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var t = 1
+			while (t <= 11000000000) {
+				// console.log("非1-")
+				t++
+			}
+		</script>
+		<h1>11111233</h1>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				console.log('3 seconds passed');
+			});
+			i = 0
+			while (i <= 1100) {
+				console.log("非i")
+				i++
+			}
+
+			console.log("ok")
+		</script>
+		<!-- //文件大被async阻断 -->
+		<!-- <script src="test4.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="test1.js" async="async" type="text/javascript"></script>
+	</body>
+</html>

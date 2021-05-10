@@ -1,0 +1,58 @@
+.columnHeight-1{
+	width: 100%;
+	display: flex;
+	.r{
+		width: 100%;
+		.span{
+			height: #{random(50)}px;
+			background: rgb(random(255), random(255), random(255));
+			border-bottom: 1px red solid;
+		}
+	}
+	.l{
+		width: 100px;
+		background: black;
+	}
+}
+.columnHeight-2{
+	width: 100%;
+	display: block;
+	position: relative;
+	.r{
+		width: 100%;
+		.span{
+			height: #{random(50)}px;
+			background: rgb(random(255), random(255), random(255));
+			border-bottom: 1px red solid;
+		}
+	}
+	.l{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100px;
+		background: black;
+	}
+}
+.columnHeight{
+	width: 100%;
+	// position: relative;
+	display: table;
+	overflow:hidden;
+	.r{
+		width: 100%;
+		display: table-cell;
+		
+		.span{
+			height: #{random(50)}px;
+			background: rgb(random(255), random(255), random(255));
+			border-bottom: 1px red solid;
+		}
+	}
+	.l{
+		background: red;
+		display: table-cell;
+		width: 100px;
+		vertical-align: middle;
+	}
+}

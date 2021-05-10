@@ -1,0 +1,100 @@
+.btn {
+  margin: 50px;
+  display: inline-block;
+  width: 100px;
+  line-height: 96px;
+  height: 100px;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box; }
+
+@keyframes runing {
+  to {
+    transform: rotate(360deg); } }
+  .btn::before {
+    box-sizing: border-box;
+    content: "";
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0 0;
+    animation: 2s runing infinite linear;
+    border-radius: 50px;
+    z-index: -2; }
+  .btn:after {
+    box-sizing: border-box;
+    content: "";
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 4px;
+    border-radius: 4px;
+    left: 4px;
+    background: green;
+    display: block;
+    height: 92px;
+    transform-origin: 0 0;
+    width: 92px;
+    z-index: -1; }
+
+.run {
+  width: 400px;
+  height: 100px;
+  margin: 20px auto;
+  background: linear-gradient(0deg, transparent 50%, orange 50%) repeat-y, linear-gradient(0deg, transparent 50%, orange 50%) repeat-y, linear-gradient(90deg, transparent 50%, orange 50%) repeat-x, linear-gradient(90deg, transparent 50%, orange 50%) repeat-x;
+  background-size: 1px 12px, 1px 12px, 12px 1px, 12px 1px;
+  background-position: 0 0, 100% 0, 0 0, 0 100%;
+  animation: shine 1s infinite linear; }
+
+@keyframes shine {
+  from { }
+  to {
+    background-position: 0 -12px, 100% 12px, 12px 0, -12px 100%; } }
+
+.box {
+  display: inline-block;
+  padding: 10px;
+  position: relative; }
+
+@keyframes borderAround {
+  0%, 100% {
+    clip: rect(0 148px 2px 0); }
+  25% {
+    clip: rect(0 148px 120px 146px); }
+  50% {
+    clip: rect(118px 148px 120px 0); }
+  75% {
+    clip: rect(0 2px 120px 0); } }
+  .box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #cd0000;
+    animation: borderAround 1.5s infinite linear; }
+
+.box1 {
+  width: 200px;
+  background: repeating-linear-gradient(135deg, transparent, transparent 3px, #000 3px, #000 8px);
+  animation: shine1 1s infinite linear;
+  overflow: hidden; }
+  .box1 .content {
+    height: 128px;
+    margin: 1px;
+    padding: 10px;
+    background-color: #fff; }
+
+@keyframes shine1 {
+  0% {
+    background-position: -1px -1px; }
+  100% {
+    background-position: -12px -12px; } }

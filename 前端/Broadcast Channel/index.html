@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 连接到广播频道
+			var bc = new BroadcastChannel('test_channel')
+			// 发送简单消息的示例
+			bc.postMessage('This is a test message.');
+		</script>
+	</body>
+</html>

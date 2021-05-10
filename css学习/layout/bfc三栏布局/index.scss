@@ -1,0 +1,21 @@
+.praent{
+	width: 100%;
+	height: 500px;
+	>div{
+		height: 100%;
+		overflow: hidden; // change BFC
+	}
+	.l{
+		width: 10%;
+		background: rgb(random(255), random(255), random(255));
+		float: left;
+	}
+	.c{
+		float: right;
+		width: 20%;
+		background: rgb(random(255), random(255), random(255));
+	}
+	.r{
+		background: rgb(random(255), random(255), random(255));
+	}
+}
