@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./assets/test.css"/>
+		<style type="text/css">
+			.registered {
+			  --xyy-white-space: #c0ffee;
+			  background-image: linear-gradient(to right, #fff, var(--xyy-white-space));
+			  transition: --xyy-white-space 1s ease-in-out;
+			}
+			
+			.registered:hover,
+			.registered:focus {
+			  --xyy-white-space: #b4d455;
+			}
+			
+			.unregistered {
+			  --unregistered: #c0ffee;
+			  background-image: linear-gradient(to right, #fff, var(--unregistered));
+			  transition: --unregistered 1s ease-in-out;
+			}
+			
+			.unregistered:hover,
+			.unregistered:focus {
+			  --unregistered: #b4d455;
+			}
+			button {
+			  font-size: 3vw;
+			}
+			
+			@property --xyy-white-space{
+					syntax: '<white-space>';
+				  inherits: true;
+				  initial-value: nowrap;
+			}
+			h1{
+				--xyy-white-space:nowrap;
+				width: 100px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: var(--xyy-white-space);
+				transition:--xyy-white-space  10s ease-in-out;
+			}
+			h1:hover{
+				--xyy-white-space: break-spaces;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log("js已经加载～"); // 会被http请求堵塞
+			// window.CSS.registerProperty({
+			//   name: '--xyy-white-space',
+			//   syntax: '<color>',
+			//   inherits: false,
+			//   initialValue: '#c0ffee',
+			// });
+			
+		</script>
+		<div>
+			<h1>我是一个大坏蛋，男男女女男男女女男男女女男女呢</h1>
+			<button class="registered">Background Registered</button>
+			<button class="unregistered">Background Not Registered</button>
+		</div>
+	</body>
+</html>

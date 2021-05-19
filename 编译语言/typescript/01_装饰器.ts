@@ -4,6 +4,7 @@ function logClass(params:any){
 	console.log(params)
 }
 
+@logClass
 class HtttpClient{
 	constructor(){
 		

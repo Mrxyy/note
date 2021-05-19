@@ -20,7 +20,7 @@ public class ArrayList<T> {
             int countLen = size+(DEFAULT_CAPACITY>>1);
             elements = Arrays.copyOf(elements, countLen);
         }
-        // 解决密度问题，size - index 通常为0
+        //将index之后元素向后移动
         System.arraycopy(elements, index,
                 elements, index + 1,
                 size - index);

@@ -19,10 +19,14 @@
   </div>
   <script type="text/javascript">
     if (navigator.serviceWorker != null) {
-    console.log(navigator.serviceWorker)
       navigator.serviceWorker.register('sw.js')
       .then(function(registration) {
-        console.log('Registered events at scope: ', registration.scope);
+        console.log('Registered events at scope: ');
+				const channel = new MessageChannel();
+				channel.port1.onmessage = function(e){
+					console.log(e.data);
+				}
+				registration.active.postMessage("发送端口",[channel.port2])
       });
     }
     var statusEl = document.querySelector('#network-status')

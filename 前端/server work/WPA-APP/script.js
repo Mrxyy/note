@@ -7,7 +7,19 @@ const butInstall = document.getElementById('butInstall');
 
 /* Only register a service worker if it's supported */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
+  navigator.serviceWorker.register('/service-worker.js').then(()=>{
+    navigator.serviceWorker.ready.then(function (reg) {
+      return reg.sync.register('syncTest', {
+        idleRequired: true,
+        maxDelay: 0
+      });
+    }).then(function () {
+      console.log('Sync registered');
+    }).catch(function (err) {
+      console.log('It broke');
+      console.log(err.message);
+    });
+  });
 }
 
 /**

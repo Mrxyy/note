@@ -62,3 +62,7 @@ self.addEventListener('fetch', function(e) {
 //     })
 //   ))
 // })
+self.onmessage = function(e){
+	console.log(e);
+	e.ports[0].postMessage("sucessed")
+}
