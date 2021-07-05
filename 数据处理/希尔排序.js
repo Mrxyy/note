@@ -1,9 +1,14 @@
-	var randomNumArr = new Array(10000000)
+	var randomNumArr = new Array(1000)
 	randomNumArr.fill(0)
 	randomNumArr.forEach((v,i)=>{
-		randomNumArr[i] = Math.random()*10000
+		randomNumArr[i] = Math.ceil(Math.random()*10)
 	})
-// 插 O(n^2)
+	
+	randomNumArr[9] = randomNumArr[0]
+/**
+ * @插 O(n^2)
+ * @param {Object} arr
+ */
 function intoSort(arr){
 	var sectionLength = 1
 	var sortArr = []
@@ -86,6 +91,12 @@ function sort(arr){
 	return arr
 }
 
+/**
+ * @description 快速排序
+ * @param {Object} arr
+ * @param {Object} baseIndex
+ * @param {Object} len
+ */
 function quickSort(arr,baseIndex,len) {
 	baseIndex = baseIndex || 0
 	len = len || arr.length - 1 
@@ -123,6 +134,7 @@ function quickSort(arr,baseIndex,len) {
 	return arr
 }
 
+//bug
 function quickSort1(arr){
             //如果数组<=1,则直接返回
             if(arr.length<=1){return arr;}
@@ -146,7 +158,62 @@ function quickSort1(arr){
             return quickSort(left).concat([pivot],quickSort(right));
 }
 
+/**
+ * @description  计数排序
+ */
+function totalSort(arr){
+		
+		let maxNum = Math.max(...arr);
+		let minNum = Math.min(...arr);
+		
+		var temArr = new Array(Math.ceil(maxNum - minNum));
+		arr.forEach((v)=>{
+			const temNum = Math.floor(v - minNum);
+			temArr[v] = !temArr[v]? 1 : temArr[v] + 1;
+		})
+		
+		return temArr.map((v,i,temArr)=>{
+			return v > 1 ? (new Array(v)).fill(i) : i;
+		}).flat().filter((v)=>v);
+}
 
+/**
+ * @description  bucketSort
+ */ 
+function bucketSort(arr,bucketSize == 55){
+	let maxVal = Math.max(...arr);
+	let minVal = Math.min(...arr);
+	let bucketCount = Math.ceil((maxVal - minVal) / bucketSize);
+	let bucket = (new Array(bucketCount)).fill(null).map(()=>[]);
+	arr.forEach((v,i)=>{
+		const index = Math.max(0,(Math.ceil((v - minVal)/bucketSize) - 1));
+		// console.log(v);
+		let path = bucket[index].findIndex((t)=>{
+			return t >= v; 
+		});
+		if(path < 0){
+			bucket[index].push(v);
+		}else{
+			bucket[index].length++;
+			bucket[index].copyWithin(path+1,path,bucket[index].length);
+			bucket[index][path] = v;
+		}
+	})
+	return bucket.flat();
+}
+
+
+/**
+ * @description  baseSort
+ */ 
+
+/**
+ * @description mergeSort
+ */
+function mergeSort(arr){
+	
+}
+// 测试
 for(var i = 0;i<1;i++){
 	console.time("插")
 	// intoSort(randomNumArr.slice())
@@ -171,6 +238,14 @@ for(var i = 0;i<1;i++){
 	console.time("快速排序1")
 	console.log(quickSort1(randomNumArr.slice()).slice(0,10));
 	console.timeEnd("快速排序1")
+	
+	console.time("计数")
+	console.log(totalSort(randomNumArr.slice(0,10)));
+	console.timeEnd("计数")
+	
+	console.time("桶")
+	console.log(bucketSort(randomNumArr.slice(0,10)));
+	console.timeEnd("桶")
 }
 
 

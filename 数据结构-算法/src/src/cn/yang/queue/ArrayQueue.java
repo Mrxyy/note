@@ -1,7 +1,5 @@
 package cn.yang.queue;
 
-import java.util.Arrays;
-
 public class ArrayQueue<T> {
     private T[] elements;
     private int front = 0;

@@ -9,6 +9,7 @@ var HtttpClient = /** @class */ (function() {
 // 装饰器
 var __decorate = (this && this.__decorate) || function(decorators, target, key, desc) {
 	var c = arguments.length,
+	// r 1.原型 , undefined ,desc
 		r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
 		d;
 	if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators,

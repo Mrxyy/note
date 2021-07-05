@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function a(num){
+				this.a = num
+			}
+			a.prototype = {b:1}
+			
+			// class assign
+			console.log(Object.create(new a(1)));
+			console.log(Object.assign({b:2},new a(2))); //遍历 Object.getOwnPropertyNames
+			//寄生组合
+			var t = new a(3)
+			console.log(Object.create(
+			  Object.getPrototypeOf(t),
+			  Object.getOwnPropertyDescriptors(t) // 属性描述对象
+			));
+		</script>
+	</body>
+</html>
