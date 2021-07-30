@@ -6,13 +6,17 @@
 		<link rel="stylesheet" type="text/css" href="index.css"/>
 	</head>
 	<body>
+		<article style="height:100px; min-height: min-content;background: #0000FF;">
+		  <aside style="height: 50%;background: red;">
+		  </aside>
+		</article>
 		<!-- 给出几个思路：
 			1、父盒子高度是根据子盒子（.r）自动变化，所以父盒子的高度不能为固定
 			2、.l 高度要等于父盒子高度 
 			（定位、flex） -->
 		<div class="columnHeight">
 			<div class="l">left</div>
-			<div class="r">
+			<div class="r" bgcolor="red"> 
 				<div class="span"></div>
 				<div class="span"></div>
 				<div class="span"></div>

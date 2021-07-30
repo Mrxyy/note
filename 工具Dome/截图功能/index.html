@@ -51,7 +51,7 @@
             takeScreenshot()
         })
         $(document).mousedown(function (e) {
-            if (num == 17) {
+            if (num == 17 | num == 18) {
                 flag = true
             }
             if (flag) {
@@ -60,7 +60,7 @@
             }
         })
         $(document).mousemove(function (e) {
-            if (flag && num == 17) {
+            if (flag && ( num == 17 || num == 18)) {
                 // Screenshot(e)
                 rect.w = Math.abs(Screenshot(e).x - start.x)
                 // console.log(Screenshot(e).y - start .y)
