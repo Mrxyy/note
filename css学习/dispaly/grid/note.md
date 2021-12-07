@@ -10,7 +10,7 @@
 ## grid-template-columns，grid-template-rows
  + 声明一个*grid*的模版
  + 参数为大小，<Number>...num 
- + repeat() 参数1:count-/`auto-fill`，参数2:<Number>...num/`fr`fraction/minmax(100px, 1fr)/auto
+ + repeat() 参数1:count-/`auto-fill`，参数2:<Number>... num/`fr`fraction/minmax(100px, 1fr)/auto
 	- auto-fill:自动根据一行的宽度/cell的宽度决定数量
 	- fr 就是剩下的比例占比，例如：1fr 2fr就是1:2
 	- minmax产生一个随机数
@@ -37,7 +37,7 @@
  
 ## grid-auto-flow
  + 类似*flex*中的`flex-direction`
- + 参考值：column、row、column dense、row dense
+ + 参考值：column、row、dense
  + `dense` 会从后面的cell中挑选合适的填充之前的不全的row
  
 ## grid-auto-rows、grid-auto-columns
@@ -68,3 +68,5 @@
 
 ### justify-self、align-self、palce-self
  + 和容器中**-item*属性一样，只是容器中定义的是所有的cell，这个是给自己定义*对齐方式*
+
+ 
